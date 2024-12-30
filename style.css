@@ -341,37 +341,7 @@ footer .link-group a{
 }
 footer .link-group a:hover{
     color: #fca61f;
-}
-.social-links button{
-    border: none;
-    margin-right: 1rem;
-    font-size: 1.2rem;
-    background-color: #fff;
-    padding: 14px 15px 10px 15px;
-}
-.social-links .dribble{
-    color: #f33a7e;
-}
-.social-links button:hover{
-    color: #fff;
-    transform: translateY(-20px);
-    transition-duration: 1s;
-}
-.social-links .dribble:hover{
-    background-color: #f33a7e;
-}
-.social-links .whatsapp{
-    color: #25D366;
-}
-.social-links .whatsapp:hover{
-    background-color: #25D366;
-}
-.social-links .behance{
-    color: #255afc;
-}
-.social-links .behance:hover{
-    background-color: #255afc;
-}
+
 
 /* styling back to top button */
 #btn-back-to-top {
@@ -383,4 +353,141 @@ footer .link-group a:hover{
     background-color: #fca61f;
     color: #fff;
     animation: pulse 3s infinite;
+}
+
+/* Adjustments for missing classes */
+.modal {
+    /* Define styles for .modal */
+}
+
+.card-img-top {
+    /* Define styles for .card-img-top */
+}
+
+.badge {
+    /* Define styles for .badge */
+}
+
+.navbar-brand {
+    /* Define styles for .navbar-brand */
+}
+
+.text-muted {
+    /* Define styles for .text-muted */
+}
+
+.modal-dialog {
+    /* Define styles for .modal-dialog */
+}
+
+.vr {
+    /* Define styles for .vr */
+}
+
+.container-fluid {
+    /* Define styles for .container-fluid */
+}
+
+.fs-3 {
+    /* Define styles for .fs-3 */
+}
+
+.portfolio {
+    /* Define styles for .portfolio */
+}
+
+.img-fluid {
+    /* Define styles for .img-fluid */
+}
+
+.text-center {
+    /* Define styles for .text-center */
+}
+
+.ms-3 {
+    /* Define styles for .ms-3 */
+}
+
+.nav-item {
+    /* Define styles for .nav-item */
+}
+
+.col-md-4 {
+    /* Define styles for .col-md-4 */
+}
+
+.col-md-5 {
+    /* Define styles for .col-md-5 */
+}
+
+.col-1 {
+    /* Define styles for .col-1 */
+}
+
+.bi {
+    /* Define styles for .bi */
+}
+
+.filter-item {
+    /* Define styles for .filter-item */
+}
+
+.collapse {
+    /* Define styles for .collapse */
+}
+
+.mb-3 {
+    /* Define styles for .mb-3 */
+}
+
+.row {
+    /* Define styles for .row */
+}
+
+.modal-content {
+    /* Define styles for .modal-content */
+}
+
+.navbar {
+    /* Define styles for .navbar */
+}
+
+.card-title {
+    /* Define styles for .card-title */
+}
+
+.btn {
+    /* Define styles for .btn */
+}
+
+.nav-link {
+    /* Define styles for .nav-link */
+}
+
+.col-10 {
+    /* Define styles for .col-10 */
+}
+
+.img {
+    /* Define styles for .img */
+}
+
+.portfolio-body {
+    /* Define styles for .portfolio-body */
+}
+
+.col-11 {
+    /* Define styles for .col-11 */
+}
+
+.card-body {
+    /* Define styles for .card-body */
+}
+
+.rounded-pill {
+    /* Define styles for .rounded-pill */
+}
+
+.w-25 {
+    /* Define styles for .w-25 */
 }

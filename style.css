@@ -49,7 +49,6 @@ a {
     color: inherit; /* Ensures button text color is inherited (from .c-btn) */
 }
 
-}
 /* styling home section starts */
 .home{
     background: linear-gradient(33deg, rgba(242,242,255,1) 0%, rgba(235,249,255,1) 100%);

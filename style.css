@@ -270,6 +270,12 @@ body{
 .btn-c i{
     color: #fca61f;
 }
+
+.modal-dialog {
+    max-width: 90%; /* Enlarges the modal's maximum width */
+    width: 90%; /* Ensures the modal takes up 90% of the viewport width */
+}
+
 .modal-body .content span{
     font-size: 1rem;
 }
@@ -346,11 +352,6 @@ footer .link-group a:hover{
 
 .text-muted {
     /* Define styles for .text-muted */
-}
-
-.modal-dialog {
-    max-width: 90%; /* Enlarges the modal's maximum width */
-    width: 90%; /* Ensures the modal takes up 90% of the viewport width */
 }
 
 }

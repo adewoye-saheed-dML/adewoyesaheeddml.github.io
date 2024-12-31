@@ -272,8 +272,8 @@ body{
 }
 
 .modal-dialog {
-    max-width: 70%; /* Enlarges the modal's maximum width */
-    width: 70%; /* Ensures the modal takes up 90% of the viewport width */
+    max-width: 60%; /* Enlarges the modal's maximum width */
+    width: 60%; /* Ensures the modal takes up 60% of the viewport width */
 }
 
 .modal-body .content span{

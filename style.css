@@ -351,6 +351,11 @@ footer .link-group a:hover{
 .modal-dialog {
     /* Define styles for .modal-dialog */
 }
+#exampleModal0 .modal-dialog {
+  max-width: 90%; /* Adjust the width percentage as needed */
+  width: 90%;
+}
+
 
 .vr {
     /* Define styles for .vr */

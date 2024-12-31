@@ -35,12 +35,20 @@ body{
     width: 100%; 
     left: 0; 
   }
-  /* styling contact btn  */
-.c-btn{
+/* Styling for the contact button */
+.c-btn {
     border: none;
     background: #fca61f;
     color: #fff;
     font-size: 1.2rem;
+}
+
+/* Remove the default underline and blue color from the anchor tag */
+a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Ensures button text color is inherited (from .c-btn) */
+}
+
 }
 /* styling home section starts */
 .home{

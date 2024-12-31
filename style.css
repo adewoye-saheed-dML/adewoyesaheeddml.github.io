@@ -349,11 +349,10 @@ footer .link-group a:hover{
 }
 
 .modal-dialog {
-    /* Define styles for .modal-dialog */
+    max-width: 90%; /* Enlarges the modal's maximum width */
+    width: 90%; /* Ensures the modal takes up 90% of the viewport width */
 }
-#exampleModal0 .modal-dialog {
-  max-width: 90%; /* Adjust the width percentage as needed */
-  width: 90%;
+
 }
 
 

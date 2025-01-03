@@ -116,7 +116,9 @@ a {
         transform: translateX(0);
     }
 }
-
+.justify-text {
+  text-align: justify;
+}
 /* expertise section starts */
 .heading small{
     color: #6f34fe;

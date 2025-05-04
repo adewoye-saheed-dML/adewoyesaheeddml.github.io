@@ -86,29 +86,32 @@
     </nav>
     <!-- navbar ends here -->
 
-    <!-- home section starts  -->
-    <section class="home pt-5 pb-5" id="home">
-      <div class="row justify-content-evenly align-middle">
-        <!-- here data-aos is used for adding aos animation  -->
-        <div class="col-10 col-md-6 text-center text-md-start" data-aos="slide-right">
-          <h2 style="color: #3f396d">
-            Hello! I'm <br /><span class="c-orange">Adewoye Saheed Damilola</span>
-          </h2>
-          <p class="text-muted justify-text">
-         I’m a motorhead data professional who helps individuals and corporations grow their businesses and products through data.
-        I use my INSIGHT framework to create impactful visualizations and
-	predictive models for businesses and stakeholders. Transform your data into a living reality with me today!
-          </p>
-          <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
-            Hire Me
-          </button>
-          <a href="" class="link ms-4 d-none">See My Work</a>
-        </div>
-        <div class="col-10 col-md-4 d-none d-md-block">
-          <img src="images/banner-01.webp" class="img-fluid" alt="" />
-        </div>
-      </div>
-    </section>
+<!-- home section starts -->
+<section class="home pt-5 pb-5" id="home">
+  <div class="row justify-content-evenly align-items-center">
+    <!-- here data-aos is used for adding aos animation -->
+    <div class="col-10 col-md-6 text-center text-md-start" data-aos="slide-right">
+      <h2 style="color: #3f396d">
+        Hello! I'm <br />
+        <span class="c-orange">Adewoye Saheed Damilola</span>
+      </h2>
+      <p class="text-muted justify-text">
+        I’m a motorhead data professional who helps individuals and corporations grow their businesses and products through data.
+        I use my INSIGHTS framework to create impactful visualizations and predictive models for businesses and stakeholders.
+        Transform your data into a living reality with me today!
+      </p>
+      <!-- Changed button to anchor to link to portfolio section -->
+      <a href="#portfolio" class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
+        Hire Me
+      </a>
+      <a href="" class="link ms-4 d-none">See My Work</a>
+    </div>
+    <div class="col-10 col-md-4 d-none d-md-block" data-aos="slide-left">
+      <img src="images/banner-01.webp" class="img-fluid" alt="Banner image representing data insights" />
+    </div>
+  </div>
+</section>
+         
     <!-- home section ends here -->
 
     <!-- expertise section starts -->
@@ -231,8 +234,7 @@
             <small>My Skills</small>
             <h3>Proficiency in Data Analysis, Predictive Modeling, and ETL</h3>
             <p class="text-muted">
- I analyze and visualize complex datasets to uncover the key 
-insights your business needs. I also develop predictive models to help organizations 
+ I analyze and visualize complex datasets to uncover the key insights your business needs. I also develop predictive models to help organizations 
 anticipate trends, optimize processes, and make data-driven decisions with confidence.
  Finally, I help to build and maintain reliable data pipelines that collect and clean your data, ensuring it’s ready for 
 analysis.
@@ -262,16 +264,17 @@ analysis.
 
   <div id="myBtnContainer" class="text-center mt-4">
     <button class="filter-item" data-filter="all">All</button>
-    <button class="filter-item" data-filter="game">Visualization</button>
-    <button class="filter-item" data-filter="webapp">Analysis</button>
-    <button class="filter-item" data-filter="website">Machine Learning</button>
-    <button class="filter-item" data-filter="brand">Data Pipeline</button>
+    <button class="filter-item" data-filter="visual">Visualization</button>
+    <button class="filter-item" data-filter="analysis">Analysis</button>
+    <button class="filter-item" data-filter="machine">Machine Learning</button>
+    <button class="filter-item" data-filter="data">Data Pipeline</button>
   </div>
 
   <div class="portfolio-body">
     <div class="row justify-content-evenly px-4">
+	    
       <!-- Post 1 -->
-      <div class="post col-md-4 game all col-10 mt-3 mt-md-0" data-aos="fade-up">
+      <div class="post col-md-4 visual all col-10 mt-3 mt-md-0" data-aos="fade-up">
         <div class="card">
           <img src="images/lagos_solar.PNG" class="card-img-top" alt="Lagos Solar Project">
           <div class="card-body text-center">
@@ -288,7 +291,25 @@ analysis.
       </div>
 
       <!-- Post 2 -->
-      <div class="post col-md-4 website all col-10 mt-3 mt-md-0" data-aos="fade-up">
+      <div class="post col-md-4 machine all col-10 mt-3 mt-md-0" data-aos="fade-up">
+        <div class="card">
+          <img src="images/depression.PNG" class="card-img-top" alt="Depression App">
+          <div class="card-body text-center">
+            <h4 class="card-title">College Student Depression App</h4>
+            <span class="badge bg-secondary badge-pill">Binary Classification</span>
+            <span class="badge bg-secondary badge-pill">Docker</span>
+            <span class="badge bg-secondary badge-pill mb-2">Web App</span><br />
+            <a href="https://medium.com/@adewoye-saheed-dml/college-students-depression-prediction-model-61f3e046df5f" 
+               class="read-more-btn link" 
+               target="_blank">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+	    
+      <!-- Post 3 -->
+      <div class="post col-md-4 analysis all col-10 mt-3 mt-md-0" data-aos="fade-up">
         <div class="card">
           <img src="images/depression.PNG" class="card-img-top" alt="Depression App">
           <div class="card-body text-center">
@@ -305,8 +326,8 @@ analysis.
         </div>
       </div>
 
-      <!-- Post 3 -->
-      <div class="post col-md-4 webapp all col-10 mt-3 mt-md-0" data-aos="fade-up">
+      <!-- Post 4 -->
+      <div class="post col-md-4 analysis all col-10 mt-3 mt-md-0" data-aos="fade-up">
         <div class="card">
           <img src="images/hng.PNG" class="card-img-top" alt="AI Homework Analysis">
           <div class="card-body text-center">
@@ -323,8 +344,8 @@ analysis.
         </div>
       </div>
 
-      <!-- Post 4 -->
-      <div class="post col-md-4 webapp all col-10 mt-3 mt-md-0" data-aos="fade-up">
+      <!-- Post 5 -->
+      <div class="post col-md-4 analysis all col-10 mt-3 mt-md-0" data-aos="fade-up">
         <div class="card">
           <img src="images/erd.PNG" class="card-img-top" alt="Data Modeling Project">
           <div class="card-body text-center">

@@ -5,24 +5,24 @@ let procProgress = document.querySelector(".esg-processing"),
   procValue = document.querySelector(".esg-processing-val");
 
 let procStartValue = 0,
-  procEndValue = 95, // High proficiency for core data skills
+  procEndValue = 95,
   procspeed = 30;
 
 let progressProc = setInterval(() => {
-  procStartValue++;
+  if(procValue){ // Check if element exists to prevent errors
+      procStartValue++;
+      procValue.textContent = `${procStartValue}%`;
+      procProgress.style.background = `conic-gradient(#28a745 ${
+        procStartValue * 3.6
+      }deg, #ededed 0deg)`;
 
-  procValue.textContent = `${procStartValue}%`;
-  // Color: #28a745 (Green)
-  procProgress.style.background = `conic-gradient(#28a745 ${
-    procStartValue * 3.6
-  }deg, #ededed 0deg)`;
-
-  if (procStartValue == procEndValue) {
-    clearInterval(progressProc);
+      if (procStartValue == procEndValue) {
+        clearInterval(progressProc);
+      }
   }
 }, procspeed);
 
-// 2. ESG Visualization (PowerBI & Tableau) - Teal/Blue
+// 2. ESG Visualization - Teal
 let vizProgress = document.querySelector(".esg-viz"),
   vizValue = document.querySelector(".esg-viz-val");
 
@@ -31,42 +31,42 @@ let vizStartValue = 0,
   vizspeed = 30;
 
 let progressViz = setInterval(() => {
-  vizStartValue++;
+  if(vizValue){
+      vizStartValue++;
+      vizValue.textContent = `${vizStartValue}%`;
+      vizProgress.style.background = `conic-gradient(#17a2b8 ${
+        vizStartValue * 3.6
+      }deg, #ededed 0deg)`;
 
-  vizValue.textContent = `${vizStartValue}%`;
-  // Color: #17a2b8 (Teal/Info)
-  vizProgress.style.background = `conic-gradient(#17a2b8 ${
-    vizStartValue * 3.6
-  }deg, #ededed 0deg)`;
-
-  if (vizStartValue == vizEndValue) {
-    clearInterval(progressViz);
+      if (vizStartValue == vizEndValue) {
+        clearInterval(progressViz);
+      }
   }
 }, vizspeed);
 
-// 3. ESG Frameworks (GRI, SASB, TCFD) - Orange
+// 3. ESG Frameworks - Orange
 let frameProgress = document.querySelector(".esg-frameworks"),
   frameValue = document.querySelector(".esg-frameworks-val");
 
 let frameStartValue = 0,
-  frameEndValue = 80, 
+  frameEndValue = 80,
   framespeed = 30;
 
 let progressFrame = setInterval(() => {
-  frameStartValue++;
+  if(frameValue){
+      frameStartValue++;
+      frameValue.textContent = `${frameStartValue}%`;
+      frameProgress.style.background = `conic-gradient(#fd7e14 ${
+        frameStartValue * 3.6
+      }deg, #ededed 0deg)`;
 
-  frameValue.textContent = `${frameStartValue}%`;
-  // Color: #fd7e14 (Orange)
-  frameProgress.style.background = `conic-gradient(#fd7e14 ${
-    frameStartValue * 3.6
-  }deg, #ededed 0deg)`;
-
-  if (frameStartValue == frameEndValue) {
-    clearInterval(progressFrame);
+      if (frameStartValue == frameEndValue) {
+        clearInterval(progressFrame);
+      }
   }
 }, framespeed);
 
-// 4. Data Engineering (dbt, Pipelines) - Dark Grey
+// 4. Data Engineering - Dark Grey
 let engProgress = document.querySelector(".esg-eng"),
   engValue = document.querySelector(".esg-eng-val");
 
@@ -75,27 +75,26 @@ let engStartValue = 0,
   engspeed = 30;
 
 let progressEng = setInterval(() => {
-  engStartValue++;
+  if(engValue){
+      engStartValue++;
+      engValue.textContent = `${engStartValue}%`;
+      engProgress.style.background = `conic-gradient(#343a40 ${
+        engStartValue * 3.6
+      }deg, #ededed 0deg)`;
 
-  engValue.textContent = `${engStartValue}%`;
-  // Color: #343a40 (Dark Grey/Governance)
-  engProgress.style.background = `conic-gradient(#343a40 ${
-    engStartValue * 3.6
-  }deg, #ededed 0deg)`;
-
-  if (engStartValue == engEndValue) {
-    clearInterval(progressEng);
+      if (engStartValue == engEndValue) {
+        clearInterval(progressEng);
+      }
   }
 }, engspeed);
 
 
 // --- PORTFOLIO FILTERING ---
-// This works with the new data-filters: "env", "soc", "gov", "reporting"
 $(document).ready(function () {
   $(".filter-item").click(function () {
     const value = $(this).attr("data-filter");
     
-    // Manage active class for buttons
+    // Manage active class
     $(".filter-item").removeClass("active");
     $(this).addClass("active");
 
@@ -114,7 +113,6 @@ $(document).ready(function () {
 
 
 // --- STICKY NAVBAR ---
-// Keeps the navbar fixed at the top when scrolling
 document.addEventListener("DOMContentLoaded", function(){
   window.addEventListener('scroll', function() {
       if (window.scrollY > 50) {
@@ -132,10 +130,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 // --- BACK TO TOP BUTTON ---
-// Get the button
 let mybutton = document.getElementById("btn-back-to-top");
 
-// When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () {
   scrollFunction();
 };
@@ -151,8 +147,21 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
 mybutton.addEventListener("click", function(){
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 });
+
+
+// --- 3D TILT EFFECT INIT ---
+// This enables the futuristic hover effect on all cards
+// Ensure vanilla-tilt.js is loaded in HTML header before this runs
+if (typeof VanillaTilt !== 'undefined') {
+    VanillaTilt.init(document.querySelectorAll(".card, .service-card, .progress-card"), {
+        max: 10,           // Max rotation in degrees
+        speed: 400,        // Speed of the enter/exit transition
+        glare: true,       // Add a light glare effect
+        "max-glare": 0.3,  // Opacity of the glare
+        scale: 1.02        // Slight zoom on hover
+    });
+}

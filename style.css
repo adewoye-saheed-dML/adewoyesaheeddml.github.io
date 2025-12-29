@@ -1,31 +1,12 @@
+/* --- GLOBAL & MOBILE FIXES --- */
 html, body {
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevents horizontal scroll/empty space on mobile */
     width: 100%;
     margin: 0;
     padding: 0;
-}
-
-/* Fix modal width on mobile */
-@media (max-width: 768px) {
-    .modal-dialog {
-        max-width: 95%;
-        width: 95%;
-    }
-    
-    .c-orange {
-        font-size: 2.5rem; /* Smaller font for mobile */
-    }
-    
-    .home h2 {
-        font-size: 2rem;
-        line-height: 2.5rem;
-    }
-}
-
-/* Applying Google font over the website */
-body {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
+    background-color: #fcfcfc;
 }
 
 /* --- COLOR PALETTE FOR ESG BRANDING --- 
@@ -33,7 +14,6 @@ body {
    Deep Teal: #004d40 (Governance/Dark)
    Accent Blue: #17a2b8 (Water/Social)
    Accent Orange: #fd7e14 (Policy/Frameworks)
-   Light Background: #f8f9fa
 */
 
 /* Styling menu icon */
@@ -41,17 +21,18 @@ body {
     border: none;
     background-color: #fff;
     font-size: 1.5rem;
-    color: #2E8B57; /* Changed to Green */
+    color: #2E8B57;
 }
 
 /* Styling navbar links */
 .navbar-nav a {
     color: black;
     position: relative;
+    font-weight: 500;
 }
 
 .navbar-nav a:hover {
-    color: #2E8B57; /* Changed to Green */
+    color: #2E8B57;
 }
 
 .navbar-nav a:after {
@@ -63,7 +44,7 @@ body {
     left: 50%;
     top: 35px;
     position: absolute;
-    background: #2E8B57; /* Changed to Green */
+    background: #2E8B57;
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
 }
@@ -76,22 +57,33 @@ body {
 /* Styling for the contact button */
 .c-btn {
     border: none;
-    background: #2E8B57; /* Green Button */
+    background: #2E8B57;
     color: #fff;
     font-size: 1.2rem;
+    box-shadow: 0 4px 6px rgba(46, 139, 87, 0.2);
+    transition: transform 0.3s ease;
 }
 
-/* Remove the default underline and ensure inheritance */
+/* Remove default underline */
 a {
     text-decoration: none;
     color: inherit;
 }
 
-/* --- HOME SECTION --- */
+/* --- HOME SECTION (ANIMATED GRADIENT MESH) --- */
 .home {
-    /* Updated gradient to a subtle "Clean Energy" Blue-Green fade */
-    background: linear-gradient(33deg, rgba(235, 250, 235, 1) 0%, rgba(224, 247, 250, 1) 100%);
-    padding: 30px 0px 10px 0px;
+    /* 4-color animated gradient for "Living Data" feel */
+    background: linear-gradient(-45deg, #e0f7fa, #e8f5e9, #ffffff, #f1f8e9);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    padding: 50px 0px 30px 0px;
+    position: relative;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .home h2 {
@@ -99,9 +91,9 @@ a {
     line-height: 4rem;
 }
 
-/* Rebranded 'c-orange' class to be the primary ESG highlight color */
+/* Rebranded 'c-orange' to Green */
 .c-orange {
-    color: #2E8B57; /* Forest Green */
+    color: #2E8B57;
     font-weight: 700;
     font-size: 4rem;
 }
@@ -113,40 +105,11 @@ a {
 }
 
 .h-btn:hover {
-    background: #004d40; /* Dark Teal on Hover */
+    background: #004d40;
     color: #fff;
-    transform: translateY(-20px);
-    transition-duration: 1s;
-}
-
-.link {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #2E8B57; /* Green Links */
-    position: relative;
-}
-
-.link::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    top: 20px;
-    background-color: #004d40; /* Dark Teal Underline */
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-}
-
-.link:hover {
-    color: #004d40;
-}
-
-.link:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+    transform: translateY(-5px);
+    transition-duration: 0.5s;
+    box-shadow: 0 10px 20px rgba(0, 77, 64, 0.2);
 }
 
 /* Animation for home section image */
@@ -164,58 +127,53 @@ a {
     text-align: justify;
 }
 
-/* --- EXPERTISE SECTION --- */
-.heading small {
-    color: #2E8B57; /* Green Small Text */
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.heading h3 {
-    margin-top: 0.5rem;
-    color: #004d40; /* Dark Teal Headings */
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-
-.expertise h4 {
-    color: #004d40;
-    font-weight: 700;
-}
-
-.expertise a {
-    text-decoration: none;
-    color: #2E8B57;
-}
-
-.expertise a:hover {
-    color: #004d40;
-}
-
-.expertise .service-card {
+/* --- GLASSMORPHISM CARDS (EXPERTISE & PORTFOLIO) --- */
+.service-card, .card {
+    background: rgba(255, 255, 255, 0.7); /* Semi-transparent */
+    backdrop-filter: blur(12px);          /* Frost Effect */
+    -webkit-backdrop-filter: blur(12px);  /* Safari */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+    border-radius: 16px;
     text-align: center;
-    padding: 15px 15px;
-    border-radius: 0.7rem;
-    background: #ffffff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Added subtle shadow for depth */
+    padding: 15px;
+    transition: all 0.4s ease; /* Smooth Tilt transition */
+}
+
+/* Card Hover: Lift & Glow */
+.service-card:hover, .card:hover {
+    transform: translateY(-10px) scale(1.02); /* Slight zoom */
+    box-shadow: 0 15px 40px rgba(46, 139, 87, 0.15); /* Greenish glow */
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.expertise h4, .card-body h4 {
+    color: #004d40;
+    font-weight: 700;
+}
+
+.expertise .text-muted {
+    font-size: 0.95rem;
 }
 
 /* --- SKILL SECTION --- */
 .skill {
-    background-color: #e8f5e9; /* Very light Green background */
+    background-color: #f8fcf8; /* Very light Mint */
 }
 
 .progress-card {
     padding: 12% 10% 10% 15%;
-    background-color: #fff;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
     text-align: center;
-    border-radius: 10%;
+    border-radius: 20px; /* Rounder */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .progress-card:hover {
-    transform: scale(1.1, 1.1);
-    transition-duration: 0.6s;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: scale(1.05);
+    transition-duration: 0.4s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .circular-progress {
@@ -223,7 +181,6 @@ a {
     height: 130px;
     width: 130px;
     border-radius: 50%;
-    /* Default background, will be overridden by JS */
     background: conic-gradient(#2E8B57 3.6deg, #ededed 0deg);
     display: flex;
     align-items: center;
@@ -243,24 +200,14 @@ a {
     position: relative;
     font-size: 1.5rem;
     font-weight: 600;
+    z-index: 2;
 }
 
-/* Specific text colors for the ESG skill bars to match the JS colors */
-.esg-processing-val {
-    color: #28a745; /* Environmental Green */
-}
-
-.esg-viz-val {
-    color: #17a2b8; /* Social/Reporting Blue */
-}
-
-.esg-frameworks-val {
-    color: #fd7e14; /* Policy Orange */
-}
-
-.esg-eng-val {
-    color: #343a40; /* Governance Grey/Black */
-}
+/* Specific text colors */
+.esg-processing-val { color: #28a745; }
+.esg-viz-val { color: #17a2b8; }
+.esg-frameworks-val { color: #fd7e14; }
+.esg-eng-val { color: #343a40; }
 
 .text {
     font-size: 1.1rem;
@@ -268,136 +215,101 @@ a {
     color: #004d40;
 }
 
-.heading p {
-    font-size: 1.3rem;
-}
-
-/* --- PORTFOLIO SECTION --- */
+/* --- PORTFOLIO FILTERS --- */
 #myBtnContainer {
     margin-bottom: 45px;
 }
 
 #myBtnContainer button {
     border: none;
-    color: black;
+    color: #555;
     background: transparent;
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
     display: inline-block;
-    margin: 0 15px;
-    padding-bottom: 5px;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: all 0.3s;
 }
 
 #myBtnContainer button:hover,
 #myBtnContainer button.active {
-    color: #2E8B57;
-    border-bottom: 2px solid #2E8B57; /* Underline effect for active filter */
-}
-
-#myBtnContainer button:focus {
-    outline: none;
-}
-
-.post .content h4 {
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.post .card {
-    border: none;
-    transition: transform 0.3s;
-}
-
-.post .card:hover {
-    transform: translateY(-5px);
-}
-
-.card-body h4.card-title {
-    color: #004d40;
-    font-weight: 700;
-    margin-bottom: 15px;
+    color: #fff;
+    background-color: #2E8B57; /* Pill shape active state */
+    box-shadow: 0 4px 10px rgba(46, 139, 87, 0.3);
 }
 
 /* --- BLOG SECTION --- */
 .blog {
-    background-color: #f1f8e9; /* Light Green Tint */
+    background-color: #f1f8e9;
 }
 
 .blog .blogpost .card {
     border: none;
-    border-radius: 5%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.nav-bg {
-    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden; /* Keeps image inside radius */
 }
 
 .blog .blogpost small {
-    color: #2E8B57; /* Author Name in Green */
-    font-size: 1.1rem;
-}
-
-.blog .blogpost h4, .blogpost a {
-    color: #004d40; /* Blog Titles in Dark Teal */
-    font-weight: 700;
-    margin-top: 1rem;
-    text-decoration: none;
-}
-
-.blogpost a:hover {
     color: #2E8B57;
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
-.blog .blogpost .read-more-btn {
-    text-decoration: none;
-    color: #2E8B57;
-    font-size: 1.1rem;
-}
-
-.blog .blogpost .read-more-btn:hover {
+.blog .blogpost h4 a {
     color: #004d40;
+    transition: color 0.3s;
+}
+
+.blog .blogpost h4 a:hover {
+    color: #2E8B57;
+}
+
+.read-more-btn {
+    color: #2E8B57;
+    font-weight: 600;
 }
 
 /* --- CONTACT SECTION --- */
 .contact {
-    background-color: #f3f3f3;
+    background-color: #fff;
 }
 
 .contact-details i {
     font-size: 1.5rem;
-    color: #2E8B57; /* Icons in Green */
+    color: #2E8B57;
 }
 
 .contact-details p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-left: 1rem;
 }
 
-.contact-form .form-control:focus {
-    box-shadow: none;
-    border: 1px solid #2E8B57; /* Focus border Green */
-}
-
 .contact-form .form-control {
-    padding: 10px 10px;
-    width: 80%;
-    border-radius: 20px; /* Slightly more rounded */
+    padding: 12px;
+    width: 100%; /* Full width on mobile */
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
 }
 
-/* --- FOOTER SECTION --- */
+.contact-form .form-control:focus {
+    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
+    border-color: #2E8B57;
+    background: #fff;
+}
+
+/* --- FOOTER --- */
 footer {
-    background-color: #1a252f; /* Dark Slate for footer (Professional) */
+    background-color: #1a252f;
 }
 
 footer .link-group a {
-    margin-left: 10px;
-    margin-right: 10px;
-    text-decoration: none;
+    margin: 0 10px;
     color: #cfd8dc;
-    font-size: 1.1rem;
-    margin-top: 1rem;
+    transition: color 0.3s;
 }
 
 footer .link-group a:hover {
@@ -407,41 +319,35 @@ footer .link-group a:hover {
 /* --- BACK TO TOP BUTTON --- */
 #btn-back-to-top {
     position: fixed;
-    bottom: 40px;
-    right: 40px;
+    bottom: 30px;
+    right: 30px;
     display: none;
-    font-size: 1.4rem;
-    background-color: #2E8B57; /* Green Button */
+    font-size: 1.2rem;
+    background-color: #2E8B57;
     color: #fff;
-    animation: pulse 3s infinite;
     border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 999;
 }
 
 #btn-back-to-top:hover {
     background-color: #004d40;
 }
 
-/* Modal and Utility Classes (Preserved/Updated) */
-.modal-dialog {
-    max-width: 60%;
-    width: 60%;
-}
-
-/* Badge styling specifically for bootstrap badges if used */
-.badge {
-    font-weight: 500;
-    letter-spacing: 0.5px;
-}
-
-.badge.bg-success {
-    background-color: #28a745 !important;
-}
-
-.badge.bg-info {
-    background-color: #17a2b8 !important;
-    color: white !important;
-}
-
-.badge.bg-secondary {
-    background-color: #6c757d !important;
+/* --- MOBILE QUERIES --- */
+@media (max-width: 768px) {
+    .c-orange {
+        font-size: 2.5rem;
+    }
+    .home h2 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+    .modal-dialog {
+        max-width: 95%;
+        width: 95%;
+    }
+    .contact-form .form-control {
+        width: 100%;
+    }
 }

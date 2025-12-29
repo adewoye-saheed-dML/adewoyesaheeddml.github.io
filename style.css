@@ -1,24 +1,36 @@
-/* appling google font over the website  */
-body{
+/* Applying Google font over the website */
+body {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
 }
-/* styling menu icon */
-.nav-menu{
+
+/* --- COLOR PALETTE FOR ESG BRANDING --- 
+   Primary Green: #2E8B57 (Forest Green)
+   Deep Teal: #004d40 (Governance/Dark)
+   Accent Blue: #17a2b8 (Water/Social)
+   Accent Orange: #fd7e14 (Policy/Frameworks)
+   Light Background: #f8f9fa
+*/
+
+/* Styling menu icon */
+.nav-menu {
     border: none;
     background-color: #fff;
     font-size: 1.5rem;
-    color: #fca61f;
+    color: #2E8B57; /* Changed to Green */
 }
-/* styling navbar links  */
-.navbar-nav a{
+
+/* Styling navbar links */
+.navbar-nav a {
     color: black;
     position: relative;
 }
-.navbar-nav a:hover{
-    color: #fca61f;
+
+.navbar-nav a:hover {
+    color: #2E8B57; /* Changed to Green */
 }
-.navbar-nav a:after {    
+
+.navbar-nav a:after {
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
     content: "";
@@ -27,60 +39,70 @@ body{
     left: 50%;
     top: 35px;
     position: absolute;
-    background: #fca61f;
+    background: #2E8B57; /* Changed to Green */
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
-  }
-.navbar-nav a:hover:after { 
-    width: 100%; 
-    left: 0; 
-  }
+}
+
+.navbar-nav a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
 /* Styling for the contact button */
 .c-btn {
     border: none;
-    background: #fca61f;
+    background: #2E8B57; /* Green Button */
     color: #fff;
     font-size: 1.2rem;
 }
 
-/* Remove the default underline and blue color from the anchor tag */
+/* Remove the default underline and ensure inheritance */
 a {
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Ensures button text color is inherited (from .c-btn) */
+    text-decoration: none;
+    color: inherit;
 }
 
-/* styling home section starts */
-.home{
-    background: linear-gradient(33deg, rgba(242,242,255,1) 0%, rgba(235,249,255,1) 100%);
+/* --- HOME SECTION --- */
+.home {
+    /* Updated gradient to a subtle "Clean Energy" Blue-Green fade */
+    background: linear-gradient(33deg, rgba(235, 250, 235, 1) 0%, rgba(224, 247, 250, 1) 100%);
     padding: 30px 0px 10px 0px;
 }
-.home h2{
+
+.home h2 {
     font-size: 3rem;
     line-height: 4rem;
 }
-.c-orange{
-    color: #6f34fe;
+
+/* Rebranded 'c-orange' class to be the primary ESG highlight color */
+.c-orange {
+    color: #2E8B57; /* Forest Green */
     font-weight: 700;
     font-size: 4rem;
 }
-.home p{
+
+.home p {
     width: fit-content;
     margin-top: 1rem;
     font-size: 1.2rem;
 }
-.h-btn:hover{
-    background: #6f34fe;
+
+.h-btn:hover {
+    background: #004d40; /* Dark Teal on Hover */
     color: #fff;
     transform: translateY(-20px);
     transition-duration: 1s;
 }
-.link{
+
+.link {
     text-decoration: none;
     font-size: 1.2rem;
-    color: #fca61f;
+    color: #2E8B57; /* Green Links */
     position: relative;
 }
-.link::after{
+
+.link::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -89,90 +111,102 @@ a {
     bottom: 0;
     left: 0;
     top: 20px;
-    background-color: #6f34fe;
+    background-color: #004d40; /* Dark Teal Underline */
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
-.link:hover{
-    color: #6f34fe;
+
+.link:hover {
+    color: #004d40;
 }
-.link:hover::after{
+
+.link:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
-/* adding animation to home section image  */
-.home img{
+
+/* Animation for home section image */
+.home img {
     animation: floatimg 4s ease-in-out infinite;
 }
 
 @keyframes floatimg {
-    0%{
-        transform: translateX(0);
-    }
-    50%{
-        transform: translateX(-24px);
-    }
-    100%{
-        transform: translateX(0);
-    }
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-24px); }
+    100% { transform: translateX(0); }
 }
+
 .justify-text {
-  text-align: justify;
+    text-align: justify;
 }
-/* expertise section starts */
-.heading small{
-    color: #6f34fe;
+
+/* --- EXPERTISE SECTION --- */
+.heading small {
+    color: #2E8B57; /* Green Small Text */
     font-size: 1.5rem;
     font-weight: 600;
 }
-.heading h3{
+
+.heading h3 {
     margin-top: 0.5rem;
-    color: #3f396d;
+    color: #004d40; /* Dark Teal Headings */
     font-size: 2.5rem;
     font-weight: 700;
 }
-.expertise h4{
-    color: #3f396d;
+
+.expertise h4 {
+    color: #004d40;
     font-weight: 700;
 }
-.expertise a{
+
+.expertise a {
     text-decoration: none;
-    color: #fca61f;
+    color: #2E8B57;
 }
-.expertise a:hover{
-    color: #6f34fe;
+
+.expertise a:hover {
+    color: #004d40;
 }
-.expertise .service-card{
+
+.expertise .service-card {
     text-align: center;
     padding: 15px 15px;
     border-radius: 0.7rem;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Added subtle shadow for depth */
 }
 
-/* skill section starts */
-.skill{
-    background-color: rgb(234, 234, 249);
+/* --- SKILL SECTION --- */
+.skill {
+    background-color: #e8f5e9; /* Very light Green background */
 }
-.progress-card{
+
+.progress-card {
     padding: 12% 10% 10% 15%;
     background-color: #fff;
     text-align: center;
     border-radius: 10%;
 }
-.progress-card:hover{
-    transform: scale(1.1,1.1);
+
+.progress-card:hover {
+    transform: scale(1.1, 1.1);
     transition-duration: 0.6s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
-.circular-progress{
+
+.circular-progress {
     position: relative;
     height: 130px;
     width: 130px;
     border-radius: 50%;
-    background: conic-gradient(#7d2ae8 3.6deg, #ededed 0deg);
+    /* Default background, will be overridden by JS */
+    background: conic-gradient(#2E8B57 3.6deg, #ededed 0deg);
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.circular-progress::before{
+
+.circular-progress::before {
     content: "";
     position: absolute;
     height: 120px;
@@ -180,300 +214,210 @@ a {
     border-radius: 50%;
     background-color: #fff;
 }
-.progress-value{
+
+.progress-value {
     position: relative;
     font-size: 1.5rem;
     font-weight: 600;
 }
-.html-progress{
-    color: #fca61f;
+
+/* Specific text colors for the ESG skill bars to match the JS colors */
+.esg-processing-val {
+    color: #28a745; /* Environmental Green */
 }
-.javascript-progress{
-    color: #6f34fe;
+
+.esg-viz-val {
+    color: #17a2b8; /* Social/Reporting Blue */
 }
-.php-progress{
-    color: #20c997;
+
+.esg-frameworks-val {
+    color: #fd7e14; /* Policy Orange */
 }
-.reactjs-progress{
-    color: #3f396d;
+
+.esg-eng-val {
+    color: #343a40; /* Governance Grey/Black */
 }
-.text{
-    font-size: 1.2rem;
-    font-weight: 500;
+
+.text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #004d40;
 }
-.heading p{
+
+.heading p {
     font-size: 1.3rem;
 }
 
-/* portfolio section starts */
-#myBtnContainer{
+/* --- PORTFOLIO SECTION --- */
+#myBtnContainer {
     margin-bottom: 45px;
 }
-#myBtnContainer button{
-  border: none;
-  color: black;
-  background: transparent;
-  font-size: 20px;
-  font-weight: 600;
-  cursor: pointer;   
-  display: inline-block;
-  margin: 0 25px;
-}
-#myBtnContainer button:hover{
-    color: #fca61f;
+
+#myBtnContainer button {
+    border: none;
+    color: black;
+    background: transparent;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 15px;
+    padding-bottom: 5px;
 }
 
-#myBtnContainer button:focus{
+#myBtnContainer button:hover,
+#myBtnContainer button.active {
+    color: #2E8B57;
+    border-bottom: 2px solid #2E8B57; /* Underline effect for active filter */
+}
+
+#myBtnContainer button:focus {
     outline: none;
 }
-.post .content h4{
+
+.post .content h4 {
     font-size: 1rem;
     font-weight: 700;
 }
-.post .card{
+
+.post .card {
     border: none;
+    transition: transform 0.3s;
 }
 
-/* blog section starts */
-.blog{
-    background-color: #f2f2ff;
+.post .card:hover {
+    transform: translateY(-5px);
 }
-.blog .blogpost .card{
+
+.card-body h4.card-title {
+    color: #004d40;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* --- BLOG SECTION --- */
+.blog {
+    background-color: #f1f8e9; /* Light Green Tint */
+}
+
+.blog .blogpost .card {
     border: none;
     border-radius: 5%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
-.nav-bg{
+
+.nav-bg {
     background-color: #fff;
 }
 
-.blog .blogpost small{
-    color: #6f34fe;
+.blog .blogpost small {
+    color: #2E8B57; /* Author Name in Green */
     font-size: 1.1rem;
 }
-.blog .blogpost h4,.blogpost a{
-    color: #3f396d;
+
+.blog .blogpost h4, .blogpost a {
+    color: #004d40; /* Blog Titles in Dark Teal */
     font-weight: 700;
     margin-top: 1rem;
     text-decoration: none;
 }
-.blogpost a:hover{
-    color: #fca61f;
+
+.blogpost a:hover {
+    color: #2E8B57;
 }
-.blog .blogpost .read-more-btn{
+
+.blog .blogpost .read-more-btn {
     text-decoration: none;
-    color: #fca61f;
+    color: #2E8B57;
     font-size: 1.1rem;
 }
-.blog .blogpost .read-more-btn:hover{
-    color: #6f34fe;
-}
-/* styling modal group  */
-.btn-c{
-    margin-left: 94%;
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    font-size: 2rem;
-    margin-top: -3%;
-}
-.btn-c i{
-    color: #fca61f;
+
+.blog .blogpost .read-more-btn:hover {
+    color: #004d40;
 }
 
-.modal-dialog {
-    max-width: 60%; /* Enlarges the modal's maximum width */
-    width: 60%; /* Ensures the modal takes up 60% of the viewport width */
-}
-
-.modal-body .content span{
-    font-size: 1rem;
-}
-.modal-body .content small{
-    font-size: 1rem;
-    color: #6f34fe;
-}
-/* contact section starts */
-.contact{
+/* --- CONTACT SECTION --- */
+.contact {
     background-color: #f3f3f3;
 }
-.contact-details i{
+
+.contact-details i {
     font-size: 1.5rem;
-    color: #fca61f;
+    color: #2E8B57; /* Icons in Green */
 }
-.contact-details p{
+
+.contact-details p {
     font-size: 1.2rem;
     margin-left: 1rem;
 }
-.contact-form .form-control:focus{
+
+.contact-form .form-control:focus {
     box-shadow: none;
-    border: 1px solid #fca61f;
+    border: 1px solid #2E8B57; /* Focus border Green */
 }
-.contact-form .form-control{
+
+.contact-form .form-control {
     padding: 10px 10px;
     width: 80%;
+    border-radius: 20px; /* Slightly more rounded */
 }
 
-/* footer section starts */
-footer{
-    background-color: #211e39;
+/* --- FOOTER SECTION --- */
+footer {
+    background-color: #1a252f; /* Dark Slate for footer (Professional) */
 }
 
-footer .link-group a{
+footer .link-group a {
     margin-left: 10px;
     margin-right: 10px;
     text-decoration: none;
-    color: #6c757d;
+    color: #cfd8dc;
     font-size: 1.1rem;
     margin-top: 1rem;
 }
-footer .link-group a:hover{
-    color: #fca61f;
 
+footer .link-group a:hover {
+    color: #2E8B57;
+}
 
-/* styling back to top button */
+/* --- BACK TO TOP BUTTON --- */
 #btn-back-to-top {
     position: fixed;
     bottom: 40px;
     right: 40px;
     display: none;
     font-size: 1.4rem;
-    background-color: #fca61f;
+    background-color: #2E8B57; /* Green Button */
     color: #fff;
     animation: pulse 3s infinite;
+    border: none;
 }
 
-/* Adjustments for missing classes */
-.modal {
-    /* Define styles for .modal */
+#btn-back-to-top:hover {
+    background-color: #004d40;
 }
 
-.card-img-top {
-    /* Define styles for .card-img-top */
+/* Modal and Utility Classes (Preserved/Updated) */
+.modal-dialog {
+    max-width: 60%;
+    width: 60%;
 }
 
+/* Badge styling specifically for bootstrap badges if used */
 .badge {
-    /* Define styles for .badge */
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
-.navbar-brand {
-    /* Define styles for .navbar-brand */
+.badge.bg-success {
+    background-color: #28a745 !important;
 }
 
-.text-muted {
-    /* Define styles for .text-muted */
+.badge.bg-info {
+    background-color: #17a2b8 !important;
+    color: white !important;
 }
 
-}
-
-
-.vr {
-    /* Define styles for .vr */
-}
-
-.container-fluid {
-    /* Define styles for .container-fluid */
-}
-
-.fs-3 {
-    /* Define styles for .fs-3 */
-}
-
-.portfolio {
-    /* Define styles for .portfolio */
-}
-
-.img-fluid {
-    /* Define styles for .img-fluid */
-}
-
-.text-center {
-    /* Define styles for .text-center */
-}
-
-.ms-3 {
-    /* Define styles for .ms-3 */
-}
-
-.nav-item {
-    /* Define styles for .nav-item */
-}
-
-.col-md-4 {
-    /* Define styles for .col-md-4 */
-}
-
-.col-md-5 {
-    /* Define styles for .col-md-5 */
-}
-
-.col-1 {
-    /* Define styles for .col-1 */
-}
-
-.bi {
-    /* Define styles for .bi */
-}
-
-.filter-item {
-    /* Define styles for .filter-item */
-}
-
-.collapse {
-    /* Define styles for .collapse */
-}
-
-.mb-3 {
-    /* Define styles for .mb-3 */
-}
-
-.row {
-    /* Define styles for .row */
-}
-
-.modal-content {
-    /* Define styles for .modal-content */
-}
-
-.navbar {
-    /* Define styles for .navbar */
-}
-
-.card-title {
-    /* Define styles for .card-title */
-}
-
-.btn {
-    /* Define styles for .btn */
-}
-
-.nav-link {
-    /* Define styles for .nav-link */
-}
-
-.col-10 {
-    /* Define styles for .col-10 */
-}
-
-.img {
-    /* Define styles for .img */
-}
-
-.portfolio-body {
-    /* Define styles for .portfolio-body */
-}
-
-.col-11 {
-    /* Define styles for .col-11 */
-}
-
-.card-body {
-    /* Define styles for .card-body */
-}
-
-.rounded-pill {
-    /* Define styles for .rounded-pill */
-}
-
-.w-25 {
-    /* Define styles for .w-25 */
+.badge.bg-secondary {
+    background-color: #6c757d !important;
 }

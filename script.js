@@ -1,92 +1,104 @@
-// htmlcss progress circular bar 
-let htmlProgress = document.querySelector(".html-css"),
-  htmlValue = document.querySelector(".html-progress");
+// --- ESG SKILL BARS ANIMATION ---
 
-let htmlStartValue = 0,
-  htmlEndValue = 90,
-  htmlspeed = 30;
+// 1. ESG Processing (Python & SQL) - Green
+let procProgress = document.querySelector(".esg-processing"),
+  procValue = document.querySelector(".esg-processing-val");
 
-let progresshtml = setInterval(() => {
-  htmlStartValue++;
+let procStartValue = 0,
+  procEndValue = 95, // High proficiency for core data skills
+  procspeed = 30;
 
-  htmlValue.textContent = `${htmlStartValue}%`;
-  htmlProgress.style.background = `conic-gradient(#fca61f ${
-    htmlStartValue * 3.6
+let progressProc = setInterval(() => {
+  procStartValue++;
+
+  procValue.textContent = `${procStartValue}%`;
+  // Color: #28a745 (Green)
+  procProgress.style.background = `conic-gradient(#28a745 ${
+    procStartValue * 3.6
   }deg, #ededed 0deg)`;
 
-  if (htmlStartValue == htmlEndValue) {
-    clearInterval(progresshtml);
+  if (procStartValue == procEndValue) {
+    clearInterval(progressProc);
   }
-}, htmlspeed);
+}, procspeed);
 
-// javasript progress circular bar 
-let javascriptProgress = document.querySelector(".javascript"),
-  javascriptValue = document.querySelector(".javascript-progress");
+// 2. ESG Visualization (PowerBI & Tableau) - Teal/Blue
+let vizProgress = document.querySelector(".esg-viz"),
+  vizValue = document.querySelector(".esg-viz-val");
 
-let javascriptStartValue = 0,
-  javascriptEndValue = 89,
-  jsspeed = 30;
+let vizStartValue = 0,
+  vizEndValue = 90,
+  vizspeed = 30;
 
-let progressjs = setInterval(() => {
-  javascriptStartValue++;
+let progressViz = setInterval(() => {
+  vizStartValue++;
 
-  javascriptValue.textContent = `${javascriptStartValue}%`;
-  javascriptProgress.style.background = `conic-gradient(#7d2ae8 ${
-    javascriptStartValue * 3.6
+  vizValue.textContent = `${vizStartValue}%`;
+  // Color: #17a2b8 (Teal/Info)
+  vizProgress.style.background = `conic-gradient(#17a2b8 ${
+    vizStartValue * 3.6
   }deg, #ededed 0deg)`;
 
-  if (javascriptStartValue == javascriptEndValue) {
-    clearInterval(progressjs);
+  if (vizStartValue == vizEndValue) {
+    clearInterval(progressViz);
   }
-}, jsspeed);
+}, vizspeed);
 
-// php progress circular bar 
-let phpProgress = document.querySelector(".php"),
-  phpValue = document.querySelector(".php-progress");
+// 3. ESG Frameworks (GRI, SASB, TCFD) - Orange
+let frameProgress = document.querySelector(".esg-frameworks"),
+  frameValue = document.querySelector(".esg-frameworks-val");
 
-let phpStartValue = 0,
-  phpEndValue = 80,
-  phpspeed = 30;
+let frameStartValue = 0,
+  frameEndValue = 80, 
+  framespeed = 30;
 
-let progressphp = setInterval(() => {
-  phpStartValue++;
+let progressFrame = setInterval(() => {
+  frameStartValue++;
 
-  phpValue.textContent = `${phpStartValue}%`;
-  phpProgress.style.background = `conic-gradient(#20c997 ${
-    phpStartValue * 3.6
+  frameValue.textContent = `${frameStartValue}%`;
+  // Color: #fd7e14 (Orange)
+  frameProgress.style.background = `conic-gradient(#fd7e14 ${
+    frameStartValue * 3.6
   }deg, #ededed 0deg)`;
 
-  if (phpStartValue == phpEndValue) {
-    clearInterval(progressphp);
+  if (frameStartValue == frameEndValue) {
+    clearInterval(progressFrame);
   }
-}, phpspeed);
+}, framespeed);
 
-// reactjs progress circular bar 
-let reactProgress = document.querySelector(".reactjs"),
-  reactValue = document.querySelector(".reactjs-progress");
+// 4. Data Engineering (dbt, Pipelines) - Dark Grey
+let engProgress = document.querySelector(".esg-eng"),
+  engValue = document.querySelector(".esg-eng-val");
 
-let reactStartValue = 0,
-  reactEndValue = 85,
-  rjsspeed = 30;
+let engStartValue = 0,
+  engEndValue = 85,
+  engspeed = 30;
 
-let progressreact = setInterval(() => {
-  reactStartValue++;
+let progressEng = setInterval(() => {
+  engStartValue++;
 
-  reactValue.textContent = `${reactStartValue}%`;
-  reactProgress.style.background = `conic-gradient(#3f396d ${
-    reactStartValue * 3.6
+  engValue.textContent = `${engStartValue}%`;
+  // Color: #343a40 (Dark Grey/Governance)
+  engProgress.style.background = `conic-gradient(#343a40 ${
+    engStartValue * 3.6
   }deg, #ededed 0deg)`;
 
-  if (reactStartValue == reactEndValue) {
-    clearInterval(progressreact);
+  if (engStartValue == engEndValue) {
+    clearInterval(progressEng);
   }
-}, rjsspeed);
+}, engspeed);
 
 
-// filter using javascript
+// --- PORTFOLIO FILTERING ---
+// This works with the new data-filters: "env", "soc", "gov", "reporting"
 $(document).ready(function () {
   $(".filter-item").click(function () {
     const value = $(this).attr("data-filter");
+    
+    // Manage active class for buttons
+    $(".filter-item").removeClass("active");
+    $(this).addClass("active");
+
     if (value == "all") {
       $(".post").show("1000");
     } else {
@@ -101,7 +113,8 @@ $(document).ready(function () {
 });
 
 
-// javascript for sticky navbar even if u scroll the navbar will be fixed
+// --- STICKY NAVBAR ---
+// Keeps the navbar fixed at the top when scrolling
 document.addEventListener("DOMContentLoaded", function(){
   window.addEventListener('scroll', function() {
       if (window.scrollY > 50) {
@@ -118,15 +131,15 @@ document.addEventListener("DOMContentLoaded", function(){
 }); 
 
 
-// adding funtionality to back to top button 
-
-//Get the button
+// --- BACK TO TOP BUTTON ---
+// Get the button
 let mybutton = document.getElementById("btn-back-to-top");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () {
   scrollFunction();
 };
+
 function scrollFunction() {
   if (
     document.body.scrollTop > 20 ||
@@ -137,8 +150,9 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
+
 // When the user clicks on the button, scroll to the top of the document
-mybutton.addEventListener("click",function(){
+mybutton.addEventListener("click", function(){
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 });

@@ -1,353 +1,294 @@
-/* --- GLOBAL & MOBILE FIXES --- */
+/* --- 1. CORE VARIABLES & RESET --- */
+:root {
+    --primary: #2E8B57;       /* ESG Forest Green */
+    --primary-dark: #1e5c39;
+    --secondary: #17a2b8;     /* Clean Water/Tech Blue */
+    --dark-bg: #f8fcfb;       /* Very light mint/grey tint */
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --text-main: #2c3e50;
+    --text-muted: #6c757d;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Josefin Sans', sans-serif;
+}
+
 html, body {
-    overflow-x: hidden; /* Prevents horizontal scroll/empty space on mobile */
+    overflow-x: hidden;
     width: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 400;
-    background-color: #fcfcfc;
+    font-family: var(--font-body);
+    color: var(--text-main);
+    background-color: var(--dark-bg);
 }
 
-/* --- COLOR PALETTE FOR ESG BRANDING --- 
-   Primary Green: #2E8B57 (Forest Green)
-   Deep Teal: #004d40 (Governance/Dark)
-   Accent Blue: #17a2b8 (Water/Social)
-   Accent Orange: #fd7e14 (Policy/Frameworks)
-*/
-
-/* Styling menu icon */
-.nav-menu {
-    border: none;
-    background-color: #fff;
-    font-size: 1.5rem;
-    color: #2E8B57;
+h1, h2, h3, h4, h5, .brand-text {
+    font-family: var(--font-heading);
 }
 
-/* Styling navbar links */
-.navbar-nav a {
-    color: black;
-    position: relative;
-    font-weight: 500;
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+/* --- 2. GLASSMORPHISM UTILITIES --- */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
 }
 
-.navbar-nav a:hover {
-    color: #2E8B57;
-}
-
-.navbar-nav a:after {
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    top: 35px;
-    position: absolute;
-    background: #2E8B57;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-}
-
-.navbar-nav a:hover:after {
-    width: 100%;
-    left: 0;
-}
-
-/* Styling for the contact button */
-.c-btn {
-    border: none;
-    background: #2E8B57;
-    color: #fff;
-    font-size: 1.2rem;
-    box-shadow: 0 4px 6px rgba(46, 139, 87, 0.2);
-    transition: transform 0.3s ease;
-}
-
-/* Remove default underline */
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* --- HOME SECTION (ANIMATED GRADIENT MESH) --- */
-.home {
-    /* 4-color animated gradient for "Living Data" feel */
-    background: linear-gradient(-45deg, #e0f7fa, #e8f5e9, #ffffff, #f1f8e9);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    padding: 50px 0px 30px 0px;
-    position: relative;
-}
-
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.home h2 {
-    font-size: 3rem;
-    line-height: 4rem;
-}
-
-/* Rebranded 'c-orange' to Green */
-.c-orange {
-    color: #2E8B57;
-    font-weight: 700;
-    font-size: 4rem;
-}
-
-.home p {
-    width: fit-content;
-    margin-top: 1rem;
-    font-size: 1.2rem;
-}
-
-.h-btn:hover {
-    background: #004d40;
-    color: #fff;
-    transform: translateY(-5px);
-    transition-duration: 0.5s;
-    box-shadow: 0 10px 20px rgba(0, 77, 64, 0.2);
-}
-
-/* Animation for home section image */
-.home img {
-    animation: floatimg 4s ease-in-out infinite;
-}
-
-@keyframes floatimg {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(-24px); }
-    100% { transform: translateX(0); }
-}
-
-.justify-text {
-    text-align: justify;
-}
-
-/* --- GLASSMORPHISM CARDS (EXPERTISE & PORTFOLIO) --- */
-.service-card, .card {
-    background: rgba(255, 255, 255, 0.7); /* Semi-transparent */
-    backdrop-filter: blur(12px);          /* Frost Effect */
-    -webkit-backdrop-filter: blur(12px);  /* Safari */
-    border: 1px solid rgba(255, 255, 255, 0.5);
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
-    border-radius: 16px;
-    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(46, 139, 87, 0.12); /* Greenish glow */
+    border-color: rgba(46, 139, 87, 0.3);
+}
+
+.glass-input {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0,0,0,0.1);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
     padding: 15px;
-    transition: all 0.4s ease; /* Smooth Tilt transition */
+}
+.glass-input:focus {
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(46, 139, 87, 0.1);
+    border-color: var(--primary);
 }
 
-/* Card Hover: Lift & Glow */
-.service-card:hover, .card:hover {
-    transform: translateY(-10px) scale(1.02); /* Slight zoom */
-    box-shadow: 0 15px 40px rgba(46, 139, 87, 0.15); /* Greenish glow */
-    background: rgba(255, 255, 255, 0.95);
+/* --- 3. NEON BUTTONS & GRADIENTS --- */
+.c-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: 0.4s;
 }
 
-.expertise h4, .card-body h4 {
-    color: #004d40;
+.glow-on-hover:hover {
+    background: var(--primary-dark);
+    box-shadow: 0 0 20px rgba(46, 139, 87, 0.6); /* Neon Glow */
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.c-btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 8px 26px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+.c-btn-outline:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background-clip: text;              /* Standard property */
+    -webkit-background-clip: text;      /* Chrome, Safari */
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+
+.text-highlight {
+    color: var(--primary);
+    position: relative;
+    z-index: 1;
+}
+.text-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(46, 139, 87, 0.15); /* Highlighter effect */
+    z-index: -1;
+    transform: rotate(-1deg);
+}
+
+/* --- 4. HERO SECTION (CANVAS LAYER) --- */
+.home {
+    min-height: 100vh;
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+#neural-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.6; /* Subtle background */
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
     font-weight: 700;
 }
 
-.expertise .text-muted {
-    font-size: 0.95rem;
+.hero-img-container {
+    position: relative;
 }
 
-/* --- SKILL SECTION --- */
-.skill {
-    background-color: #f8fcf8; /* Very light Mint */
+.floating-anim {
+    animation: float 6s ease-in-out infinite;
 }
 
-.progress-card {
-    padding: 12% 10% 10% 15%;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    text-align: center;
-    border-radius: 20px; /* Rounder */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
 
-.progress-card:hover {
-    transform: scale(1.05);
-    transition-duration: 0.4s;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+/* Floating Badges */
+.floating-badge {
+    position: absolute;
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    z-index: 2;
+    background: white;
+}
+.badge-1 { top: 20%; left: -10%; animation: float 5s ease-in-out infinite 1s; }
+.badge-2 { bottom: 20%; right: -5%; animation: float 7s ease-in-out infinite 0.5s; }
+
+
+/* --- 5. SECTIONS & CARDS --- */
+.section-padding { padding: 80px 0; }
+.sub-title {
+    display: block;
+    color: var(--secondary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
 }
 
+/* Circular Progress Skills */
 .circular-progress {
     position: relative;
-    height: 130px;
-    width: 130px;
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
-    background: conic-gradient(#2E8B57 3.6deg, #ededed 0deg);
+    background: conic-gradient(var(--primary) 0deg, #ededed 0deg);
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .circular-progress::before {
     content: "";
     position: absolute;
-    height: 120px;
-    width: 120px;
+    height: 90px;
+    width: 90px;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: var(--glass-bg);
 }
-
-.progress-value {
-    position: relative;
-    font-size: 1.5rem;
-    font-weight: 600;
-    z-index: 2;
-}
-
-/* Specific text colors */
-.esg-processing-val { color: #28a745; }
-.esg-viz-val { color: #17a2b8; }
+.progress-value { font-size: 1.2rem; font-weight: 700; position: relative; z-index: 2; }
+.esg-processing-val { color: var(--primary); }
+.esg-viz-val { color: var(--secondary); }
 .esg-frameworks-val { color: #fd7e14; }
 .esg-eng-val { color: #343a40; }
 
-.text {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #004d40;
-}
 
-/* --- PORTFOLIO FILTERS --- */
-#myBtnContainer {
-    margin-bottom: 45px;
+/* Portfolio Images */
+.project-card { overflow: hidden; height: 100%; border: none; }
+.card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    height: 200px;
 }
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+.project-card:hover .card-img-top { transform: scale(1.1); }
 
+/* Image Overlay on Hover */
+.overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(46, 139, 87, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+.project-card:hover .overlay { opacity: 1; }
+.overlay i { font-size: 2rem; color: white; transform: rotate(-45deg); transition: 0.4s; }
+.project-card:hover .overlay i { transform: rotate(0deg); }
+
+
+/* Badge Soft Colors */
+.badge { padding: 6px 12px; border-radius: 30px; font-weight: 600; font-size: 0.75rem; }
+.bg-success-soft { background: rgba(40, 167, 69, 0.15); color: #28a745; }
+.bg-primary-soft { background: rgba(0, 123, 255, 0.15); color: #007bff; }
+.bg-info-soft { background: rgba(23, 162, 184, 0.15); color: #17a2b8; }
+.bg-warning-soft { background: rgba(255, 193, 7, 0.15); color: #856404; }
+.bg-secondary-soft { background: rgba(108, 117, 125, 0.15); color: #6c757d; }
+
+
+/* --- 6. FILTERS --- */
 #myBtnContainer button {
     border: none;
-    color: #555;
     background: transparent;
-    font-size: 18px;
+    padding: 8px 20px;
+    margin: 0 5px;
+    border-radius: 30px;
     font-weight: 600;
-    cursor: pointer;
-    display: inline-block;
-    margin: 0 10px;
-    padding: 5px 10px;
-    border-radius: 20px;
-    transition: all 0.3s;
+    color: var(--text-muted);
+    transition: 0.3s;
+}
+#myBtnContainer button.active,
+#myBtnContainer button:hover {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(46, 139, 87, 0.3);
 }
 
-#myBtnContainer button:hover,
-#myBtnContainer button.active {
-    color: #fff;
-    background-color: #2E8B57; /* Pill shape active state */
-    box-shadow: 0 4px 10px rgba(46, 139, 87, 0.3);
-}
 
-/* --- BLOG SECTION --- */
-.blog {
-    background-color: #f1f8e9;
-}
-
-.blog .blogpost .card {
-    border: none;
-    border-radius: 16px;
-    overflow: hidden; /* Keeps image inside radius */
-}
-
-.blog .blogpost small {
-    color: #2E8B57;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.blog .blogpost h4 a {
-    color: #004d40;
-    transition: color 0.3s;
-}
-
-.blog .blogpost h4 a:hover {
-    color: #2E8B57;
-}
-
-.read-more-btn {
-    color: #2E8B57;
-    font-weight: 600;
-}
-
-/* --- CONTACT SECTION --- */
-.contact {
-    background-color: #fff;
-}
-
-.contact-details i {
-    font-size: 1.5rem;
-    color: #2E8B57;
-}
-
-.contact-details p {
-    font-size: 1.1rem;
-    margin-left: 1rem;
-}
-
-.contact-form .form-control {
-    padding: 12px;
-    width: 100%; /* Full width on mobile */
-    border-radius: 12px;
-    border: 1px solid #ddd;
-    background: #f9f9f9;
-}
-
-.contact-form .form-control:focus {
-    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
-    border-color: #2E8B57;
-    background: #fff;
-}
-
-/* --- FOOTER --- */
-footer {
-    background-color: #1a252f;
-}
-
-footer .link-group a {
-    margin: 0 10px;
-    color: #cfd8dc;
-    transition: color 0.3s;
-}
-
-footer .link-group a:hover {
-    color: #2E8B57;
-}
-
-/* --- BACK TO TOP BUTTON --- */
+/* --- 7. FOOTER & BACK TO TOP --- */
+footer { background: #f1f3f5; font-size: 0.9rem; }
 #btn-back-to-top {
     position: fixed;
     bottom: 30px;
     right: 30px;
     display: none;
-    font-size: 1.2rem;
-    background-color: #2E8B57;
-    color: #fff;
+    background: var(--primary);
+    color: white;
     border: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    z-index: 999;
+    width: 45px; height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
 }
 
-#btn-back-to-top:hover {
-    background-color: #004d40;
-}
 
-/* --- MOBILE QUERIES --- */
-@media (max-width: 768px) {
-    .c-orange {
-        font-size: 2.5rem;
-    }
-    .home h2 {
-        font-size: 2rem;
-        line-height: 2.5rem;
-    }
-    .modal-dialog {
-        max-width: 95%;
-        width: 95%;
-    }
-    .contact-form .form-control {
-        width: 100%;
-    }
+/* --- 8. MOBILE ADJUSTMENTS --- */
+@media (max-width: 991px) {
+    .hero-title { font-size: 2.5rem; }
+    .glass-nav { padding: 10px 0; }
+    .badge-1, .badge-2 { display: none; } /* Hide floating badges on mobile to save space */
 }

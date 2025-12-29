@@ -1,167 +1,275 @@
-// --- ESG SKILL BARS ANIMATION ---
-
-// 1. ESG Processing (Python & SQL) - Green
-let procProgress = document.querySelector(".esg-processing"),
-  procValue = document.querySelector(".esg-processing-val");
-
-let procStartValue = 0,
-  procEndValue = 95,
-  procspeed = 30;
-
-let progressProc = setInterval(() => {
-  if(procValue){ // Check if element exists to prevent errors
-      procStartValue++;
-      procValue.textContent = `${procStartValue}%`;
-      procProgress.style.background = `conic-gradient(#28a745 ${
-        procStartValue * 3.6
-      }deg, #ededed 0deg)`;
-
-      if (procStartValue == procEndValue) {
-        clearInterval(progressProc);
-      }
-  }
-}, procspeed);
-
-// 2. ESG Visualization - Teal
-let vizProgress = document.querySelector(".esg-viz"),
-  vizValue = document.querySelector(".esg-viz-val");
-
-let vizStartValue = 0,
-  vizEndValue = 90,
-  vizspeed = 30;
-
-let progressViz = setInterval(() => {
-  if(vizValue){
-      vizStartValue++;
-      vizValue.textContent = `${vizStartValue}%`;
-      vizProgress.style.background = `conic-gradient(#17a2b8 ${
-        vizStartValue * 3.6
-      }deg, #ededed 0deg)`;
-
-      if (vizStartValue == vizEndValue) {
-        clearInterval(progressViz);
-      }
-  }
-}, vizspeed);
-
-// 3. ESG Frameworks - Orange
-let frameProgress = document.querySelector(".esg-frameworks"),
-  frameValue = document.querySelector(".esg-frameworks-val");
-
-let frameStartValue = 0,
-  frameEndValue = 80,
-  framespeed = 30;
-
-let progressFrame = setInterval(() => {
-  if(frameValue){
-      frameStartValue++;
-      frameValue.textContent = `${frameStartValue}%`;
-      frameProgress.style.background = `conic-gradient(#fd7e14 ${
-        frameStartValue * 3.6
-      }deg, #ededed 0deg)`;
-
-      if (frameStartValue == frameEndValue) {
-        clearInterval(progressFrame);
-      }
-  }
-}, framespeed);
-
-// 4. Data Engineering - Dark Grey
-let engProgress = document.querySelector(".esg-eng"),
-  engValue = document.querySelector(".esg-eng-val");
-
-let engStartValue = 0,
-  engEndValue = 85,
-  engspeed = 30;
-
-let progressEng = setInterval(() => {
-  if(engValue){
-      engStartValue++;
-      engValue.textContent = `${engStartValue}%`;
-      engProgress.style.background = `conic-gradient(#343a40 ${
-        engStartValue * 3.6
-      }deg, #ededed 0deg)`;
-
-      if (engStartValue == engEndValue) {
-        clearInterval(progressEng);
-      }
-  }
-}, engspeed);
-
-
-// --- PORTFOLIO FILTERING ---
-$(document).ready(function () {
-  $(".filter-item").click(function () {
-    const value = $(this).attr("data-filter");
-    
-    // Manage active class
-    $(".filter-item").removeClass("active");
-    $(this).addClass("active");
-
-    if (value == "all") {
-      $(".post").show("1000");
-    } else {
-      $(".post")
-        .not("." + value)
-        .hide("1000");
-      $(".post")
-        .filter("." + value)
-        .show("1000");
+/* =========================================
+   1. PRELOADER & INITIALIZATION
+   ========================================= */
+   document.addEventListener("DOMContentLoaded", () => {
+  
+    // Initialize 3D Tilt for Glass Cards
+    if (typeof VanillaTilt !== 'undefined') {
+        VanillaTilt.init(document.querySelectorAll(".glass-card, .project-card, .service-card"), {
+            max: 10,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2,
+            scale: 1.02
+        });
     }
-  });
+
+    // Initialize Typewriter Effect
+    if (document.querySelector('.auto-type')) {
+        new Typed('.auto-type', {
+            strings: [
+                "ESG Data Specialist", 
+                "Sustainability Analyst", 
+                "Carbon Accounting Lead",
+                "Data Engineer"
+            ],
+            typeSpeed: 100,
+            backSpeed: 50,
+            loop: true
+        });
+    }
+
+    initNeuralNetwork();
+    initCounters();
+    initSkillBars();
 });
 
+/* =========================================
+   2. NEURAL NETWORK BACKGROUND (CANVAS)
+   ========================================= */
+function initNeuralNetwork() {
+    const canvas = document.getElementById("neural-canvas");
+    if (!canvas) return;
 
-// --- STICKY NAVBAR ---
-document.addEventListener("DOMContentLoaded", function(){
-  window.addEventListener('scroll', function() {
-      if (window.scrollY > 50) {
-        document.getElementById('navbar-top').classList.add('fixed-top');
-        // add padding top to show content behind navbar
-        navbar_height = document.querySelector('.navbar').offsetHeight;
-        document.body.style.paddingTop = navbar_height + 'px';
-      } else {
-        document.getElementById('navbar-top').classList.remove('fixed-top');
-         // remove padding top from body
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particlesArray;
+
+    // Handle Window Resize
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initParticles();
+    });
+
+    // Mouse Interaction
+    const mouse = { x: null, y: null, radius: 150 };
+
+    window.addEventListener('mousemove', (event) => {
+        mouse.x = event.x;
+        mouse.y = event.y;
+    });
+
+    // Particle Class
+    class Particle {
+        constructor(x, y, directionX, directionY, size, color) {
+            this.x = x;
+            this.y = y;
+            this.directionX = directionX;
+            this.directionY = directionY;
+            this.size = size;
+            this.color = color;
+        }
+
+        // Draw individual particle
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+
+        // Update particle position
+        update() {
+            if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+            if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+
+            // Mouse repulsion (optional, currently just movement)
+            this.x += this.directionX;
+            this.y += this.directionY;
+            this.draw();
+        }
+    }
+
+    // Create Particle Cluster
+    function initParticles() {
+        particlesArray = [];
+        let numberOfParticles = (canvas.width * canvas.height) / 9000;
+        
+        for (let i = 0; i < numberOfParticles; i++) {
+            let size = (Math.random() * 3) + 1;
+            let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+            let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+            let directionX = (Math.random() * 2) - 1; // Speed
+            let directionY = (Math.random() * 2) - 1;
+            
+            // ESG Colors: Mix of Green and Teal
+            let color = Math.random() > 0.5 ? '#2E8B57' : '#17a2b8'; 
+            
+            particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+        }
+    }
+
+    // Animation Loop
+    function animate() {
+        requestAnimationFrame(animate);
+        ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+        }
+        connect();
+    }
+
+    // Draw Lines between particles
+    function connect() {
+        let opacityValue = 1;
+        for (let a = 0; a < particlesArray.length; a++) {
+            for (let b = a; b < particlesArray.length; b++) {
+                let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + 
+                               ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                
+                if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                    opacityValue = 1 - (distance / 20000);
+                    ctx.strokeStyle = 'rgba(46, 139, 87,' + opacityValue + ')'; // Green connections
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    initParticles();
+    animate();
+}
+
+/* =========================================
+   3. SMART COUNTERS (IntersectionObserver)
+   ========================================= */
+function initCounters() {
+    const counters = document.querySelectorAll('.counter-value');
+    const speed = 200; // The lower the slower
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = +counter.getAttribute('data-target');
+                
+                const updateCount = () => {
+                    const count = +counter.innerText.replace(/,/g, '') || 0; // Handle existing commas
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        // Format numbers with commas (e.g. 1,000,000)
+                        counter.innerText = Math.ceil(count + inc).toLocaleString();
+                        setTimeout(updateCount, 20);
+                    } else {
+                        // Add + sign if strictly required, or just target
+                        counter.innerText = target.toLocaleString() + (target < 1000 ? "+" : "+");
+                    }
+                };
+                updateCount();
+                observer.unobserve(counter); // Run only once
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => observer.observe(counter));
+}
+
+/* =========================================
+   4. SKILL BARS (Trigger on Scroll)
+   ========================================= */
+function initSkillBars() {
+    const skillsSection = document.querySelector('#about');
+    if (!skillsSection) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                runSkillAnimation('.esg-processing', '.esg-processing-val', 95, '#28a745'); // Green
+                runSkillAnimation('.esg-viz', '.esg-viz-val', 90, '#17a2b8');        // Teal
+                runSkillAnimation('.esg-frameworks', '.esg-frameworks-val', 80, '#fd7e14'); // Orange
+                runSkillAnimation('.esg-eng', '.esg-eng-val', 85, '#343a40');        // Dark
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    observer.observe(skillsSection);
+}
+
+function runSkillAnimation(circleSelector, textSelector, endValue, color) {
+    const circle = document.querySelector(circleSelector);
+    const text = document.querySelector(textSelector);
+    
+    if (!circle || !text) return;
+
+    let startValue = 0;
+    let speed = 20;
+
+    let progress = setInterval(() => {
+        startValue++;
+        text.textContent = `${startValue}%`;
+        circle.style.background = `conic-gradient(${color} ${startValue * 3.6}deg, rgba(255,255,255,0.1) 0deg)`;
+
+        if (startValue === endValue) {
+            clearInterval(progress);
+        }
+    }, speed);
+}
+
+/* =========================================
+   5. NAVIGATION & UTILITIES
+   ========================================= */
+// Sticky Navbar
+window.addEventListener('scroll', function() {
+    const nav = document.getElementById('navbar-top');
+    if (window.scrollY > 50) {
+        nav.classList.add('fixed-top');
+        document.body.style.paddingTop = nav.offsetHeight + 'px';
+    } else {
+        nav.classList.remove('fixed-top');
         document.body.style.paddingTop = '0';
-      } 
-  });
-}); 
+    } 
+});
 
-
-// --- BACK TO TOP BUTTON ---
+// Back to Top Button
 let mybutton = document.getElementById("btn-back-to-top");
-
 window.onscroll = function () {
-  scrollFunction();
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
 };
 
-function scrollFunction() {
-  if (
-    document.body.scrollTop > 20 ||
-    document.documentElement.scrollTop > 20
-  ) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-mybutton.addEventListener("click", function(){
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-});
-
-
-// --- 3D TILT EFFECT INIT ---
-// This enables the futuristic hover effect on all cards
-// Ensure vanilla-tilt.js is loaded in HTML header before this runs
-if (typeof VanillaTilt !== 'undefined') {
-    VanillaTilt.init(document.querySelectorAll(".card, .service-card, .progress-card"), {
-        max: 10,           // Max rotation in degrees
-        speed: 400,        // Speed of the enter/exit transition
-        glare: true,       // Add a light glare effect
-        "max-glare": 0.3,  // Opacity of the glare
-        scale: 1.02        // Slight zoom on hover
+if(mybutton){
+    mybutton.addEventListener("click", function(){
+        window.scrollTo({top: 0, behavior: 'smooth'});
     });
 }
+
+// Portfolio Filtering (Using jQuery for compatibility with existing logic)
+$(document).ready(function () {
+    $(".filter-item").click(function () {
+        const value = $(this).attr("data-filter");
+        
+        $(".filter-item").removeClass("active");
+        $(this).addClass("active");
+
+        if (value == "all") {
+            $(".post").show(1000);
+        } else {
+            $(".post").not("." + value).hide(1000);
+            $(".post").filter("." + value).show(1000);
+        }
+    });
+});

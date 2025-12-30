@@ -1,426 +1,474 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Saheed Damilola Adewoye| ESG Data Specialist</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saheed Damilola Adewoye| ESG Data Specialist</title>
 
-    <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Space+Grotesk:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="stylesheet" href="style.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
-    />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Space+Grotesk:wght@300;500;700&display=swap"
+    rel="stylesheet" />
 
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-    
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-  </head>
-  <body>
-    
-    <nav
-      id="navbar-top"
-      class="navbar navbar-expand-lg navbar-light fixed-top glass-nav"
-    >
-      <div class="container-fluid px-5">
-        <a class="navbar-brand fw-bold fs-3 brand-text" href="#">
-          <i class="bi bi-diagram-3-fill me-2"></i>ESG<span style="color:var(--primary)">.Data</span>
-        </a>
-        <button
-          class="nav-menu d-md-none"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <i class="bi bi-list"></i>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav gap-4" style="font-size: 1.1rem">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#service">Solutions</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#portfolio">Projects</a>
-            </li>
-          </ul>
-        </div>
-        <a href="#contact" class="d-none d-md-block">
-          <button class="c-btn glow-on-hover">Hire Me</button>
-        </a>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+</head>
+
+<body>
+
+  <nav id="navbar-top" class="navbar navbar-expand-lg navbar-light fixed-top glass-nav">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand fw-bold fs-3 brand-text" href="#">
+        <i class="bi bi-diagram-3-fill me-2"></i>ESG<span style="color:var(--primary)">.Data</span>
+      </a>
+      <button class="nav-menu d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav gap-4" style="font-size: 1.1rem">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#service">Solutions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">Projects</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+      <a href="#contact" class="d-none d-md-block">
+        <button class="c-btn glow-on-hover">Hire Me</button>
+      </a>
+    </div>
+  </nav>
 
-    <section class="home d-flex align-items-center position-relative" id="home">
-      <canvas id="neural-canvas"></canvas>
-      
-      <div class="container position-relative z-2">
-        <div class="row justify-content-between align-items-center">
-          <div class="col-lg-7 text-center text-lg-start" data-aos="fade-right">
-            <h2 class="hero-title">
-              Turning Raw Data Into <br />
-              <span class="text-gradient">Sustainable Growth</span>
-            </h2>
-            
-            <h3 class="mt-3 fs-2 fw-bold" style="color: #444;">
-              I am a <span class="auto-type" style="color: var(--primary);"></span>
-            </h3>
+  <section class="home d-flex align-items-center position-relative" id="home">
+    <canvas id="neural-canvas"></canvas>
 
-            <p class="text-muted hero-desc mt-3">
-              Building end-to-end ESG analytics systems that bridge the gap between environmental data and actionable corporate strategy.
-            </p>
+    <div class="container position-relative z-2">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-lg-7 text-center text-lg-start" data-aos="fade-right">
+          <h2 class="hero-title">
+            Turning Raw Data Into <br />
+            <span class="text-gradient">Sustainable Growth</span>
+          </h2>
 
-            <div class="row mt-5 mb-4 counter-wrapper glass-panel p-3">
-                <div class="col-4 text-center border-end border-light">
-                    <h2 class="fw-bold counter-value" data-target="15">0</h2>
-                    <small class="text-uppercase fw-bold text-muted">Projects</small>
-                </div>
-                <div class="col-4 text-center border-end border-light">
-                    <h2 class="fw-bold counter-value" data-target="100000">0</h2>
-                    <small class="text-uppercase fw-bold text-muted">Rows Cleaned</small>
-                </div>
-                <div class="col-4 text-center">
-                    <h2 class="fw-bold counter-value" data-target="100">0</h2>
-                    <small class="text-uppercase fw-bold text-muted">% Audit Ready</small>
-                </div>
+          <h3 class="mt-3 fs-2 fw-bold" style="color: #444;">
+            I am a <span class="auto-type" style="color: var(--primary);"></span>
+          </h3>
+
+          <p class="text-muted hero-desc mt-3">
+            Building end-to-end ESG analytics systems that bridge the gap between environmental data and actionable
+            corporate strategy.
+          </p>
+
+          <div class="row mt-5 mb-4 counter-wrapper glass-panel p-3">
+            <div class="col-4 text-center border-end border-light">
+              <h2 class="fw-bold counter-value" data-target="15">0</h2>
+              <small class="text-uppercase fw-bold text-muted">Projects</small>
             </div>
-
-            <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
-                <a href="#portfolio" class="c-btn glow-on-hover">View Portfolio</a>
-                <a href="#contact" class="c-btn-outline">Contact Me</a>
+            <div class="col-4 text-center border-end border-light">
+              <h2 class="fw-bold counter-value" data-target="100000">0</h2>
+              <small class="text-uppercase fw-bold text-muted">Rows Cleaned</small>
+            </div>
+            <div class="col-4 text-center">
+              <h2 class="fw-bold counter-value" data-target="100">0</h2>
+              <small class="text-uppercase fw-bold text-muted">% Audit Ready</small>
             </div>
           </div>
 
-          <div class="col-lg-5 d-none d-lg-block text-center" data-aos="fade-left">
-            <div class="hero-img-container">
-                <img src="images/nh.png" class="img-fluid floating-anim" alt="ESG Data Analytics" />
-                <div class="floating-badge badge-1 glass-card">
-                    <i class="bi bi-graph-up-arrow text-success"></i> Carbon Reduced
-                </div>
-                <div class="floating-badge badge-2 glass-card">
-                    <i class="bi bi-shield-check text-primary"></i> CSRD Compliant
-                </div>
+          <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+            <a href="#portfolio" class="c-btn glow-on-hover">View Portfolio</a>
+            <a href="#contact" class="c-btn-outline">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 d-none d-lg-block text-center" data-aos="fade-left">
+          <div class="hero-img-container">
+            <img src="images/nh.png" class="img-fluid floating-anim" alt="ESG Data Analytics" />
+            <div class="floating-badge badge-1 glass-card">
+              <i class="bi bi-graph-up-arrow text-success"></i> Carbon Reduced
+            </div>
+            <div class="floating-badge badge-2 glass-card">
+              <i class="bi bi-shield-check text-primary"></i> CSRD Compliant
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="expertise section-padding" id="service">
-      <div class="container">
-        <div class="section-header text-center mb-5" data-aos="fade-up">
-            <span class="sub-title">What I Deliver</span>
-            <h2 class="fw-bold">Data-Driven <span class="text-highlight">Sustainability</span></h2>
-        </div>
-        
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-card glass-card h-100 p-4">
-              <div class="icon-box mb-3">
-                <img src="images/data clean.png" class="img-fluid" alt="Pipeline">
-              </div>
-              <h4>Environmental Pipelines</h4>
-              <p class="text-muted">
-                Ingesting and cleaning complex Scope 1, 2, & 3 emissions data using robust Python & SQL ETL pipelines.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card glass-card h-100 p-4">
-              <div class="icon-box mb-3">
-                <img src="images/viz.png" class="img-fluid" alt="Reporting">
-              </div>
-              <h4>ESG Dashboards</h4>
-              <p class="text-muted">
-                Interactive Power BI & Tableau dashboards aligned with GRI & SASB frameworks for transparent stakeholder reporting.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-card glass-card h-100 p-4">
-              <div class="icon-box mb-3">
-                <img src="images/predict.png" class="img-fluid" alt="AI Models">
-              </div>
-              <h4>Predictive Risk AI</h4>
-              <p class="text-muted">
-                Machine learning models to forecast climate risks, supplier compliance scores, and energy optimization pathways.
-              </p>
-            </div>
-          </div>
-        </div>
+  <section class="expertise section-padding" id="service">
+    <div class="container">
+      <div class="section-header text-center mb-5" data-aos="fade-up">
+        <span class="sub-title">What I Deliver</span>
+        <h2 class="fw-bold">Data-Driven <span class="text-highlight">Sustainability</span></h2>
       </div>
-    </section>
 
-    <section class="skill section-padding position-relative" id="about">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6" data-aos="fade-right">
-             <div class="row g-4">
-                <div class="col-6">
-                    <div class="skill-card glass-card text-center p-3">
-                        <div class="circular-progress esg-processing mx-auto">
-                            <span class="progress-value esg-processing-val">0%</span>
-                        </div>
-                        <p class="mt-2 fw-bold">Python & SQL</p>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="skill-card glass-card text-center p-3">
-                        <div class="circular-progress esg-viz mx-auto">
-                            <span class="progress-value esg-viz-val">0%</span>
-                        </div>
-                        <p class="mt-2 fw-bold">PowerBI/Viz</p>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="skill-card glass-card text-center p-3">
-                        <div class="circular-progress esg-frameworks mx-auto">
-                            <span class="progress-value esg-frameworks-val">0%</span>
-                        </div>
-                        <p class="mt-2 fw-bold">ESG Frameworks</p>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="skill-card glass-card text-center p-3">
-                        <div class="circular-progress esg-eng mx-auto">
-                            <span class="progress-value esg-eng-val">0%</span>
-                        </div>
-                        <p class="mt-2 fw-bold">Data Engineering</p>
-                    </div>
-                </div>
-             </div>
-          </div>
-
-          <div class="col-lg-6 mt-5 mt-lg-0 ps-lg-5" data-aos="fade-left">
-            <span class="sub-title">Technical Proficiency</span>
-            <h2 class="fw-bold mb-4">Bridging Code & <span class="text-highlight">Compliance</span></h2>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card glass-card h-100 p-4">
+            <div class="icon-box mb-3">
+              <img src="images/data clean.png" class="img-fluid" alt="Pipeline">
+            </div>
+            <h4>Environmental Pipelines</h4>
             <p class="text-muted">
-              I specialize in the technical side of sustainability. While others talk policy, I build the data infrastructure that proves it.
+              Ingesting and cleaning complex Scope 1, 2, & 3 emissions data using robust Python & SQL ETL pipelines.
             </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card glass-card h-100 p-4">
+            <div class="icon-box mb-3">
+              <img src="images/viz.png" class="img-fluid" alt="Reporting">
+            </div>
+            <h4>ESG Dashboards</h4>
             <p class="text-muted">
-              From building <strong>data pipelines</strong> for audit-ready metrics to training <strong>Predictive Models</strong> for net-zero pathways, I ensure your data is accurate, traceable, and impactful.
+              Interactive Power BI & Tableau dashboards aligned with GRI & SASB frameworks for transparent stakeholder
+              reporting.
             </p>
-            <a href="Saheed_Damilola_A._ESG_Analyst.pdf" download class="c-btn glow-on-hover mt-3 d-inline-block">
-                <i class="bi bi-download me-2"></i>Download Resume
-            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-card glass-card h-100 p-4">
+            <div class="icon-box mb-3">
+              <img src="images/predict.png" class="img-fluid" alt="AI Models">
+            </div>
+            <h4>Predictive Risk AI</h4>
+            <p class="text-muted">
+              Machine learning models to forecast climate risks, supplier compliance scores, and energy optimization
+              pathways.
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="portfolio section-padding" id="portfolio">
-      <div class="container">
-        <div class="section-header text-center mb-5">
-            <span class="sub-title">Featured Work</span>
-            <h2 class="fw-bold">Impact <span class="text-highlight">Portfolio</span></h2>
+  <section class="skill section-padding position-relative" id="about">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="row g-4">
+            <div class="col-6">
+              <div class="skill-card glass-card text-center p-3">
+                <div class="circular-progress esg-processing mx-auto">
+                  <span class="progress-value esg-processing-val">0%</span>
+                </div>
+                <p class="mt-2 fw-bold">Python & SQL</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="skill-card glass-card text-center p-3">
+                <div class="circular-progress esg-viz mx-auto">
+                  <span class="progress-value esg-viz-val">0%</span>
+                </div>
+                <p class="mt-2 fw-bold">PowerBI/Viz</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="skill-card glass-card text-center p-3">
+                <div class="circular-progress esg-frameworks mx-auto">
+                  <span class="progress-value esg-frameworks-val">0%</span>
+                </div>
+                <p class="mt-2 fw-bold">ESG Frameworks</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="skill-card glass-card text-center p-3">
+                <div class="circular-progress esg-eng mx-auto">
+                  <span class="progress-value esg-eng-val">0%</span>
+                </div>
+                <p class="mt-2 fw-bold">Data Engineering</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div id="myBtnContainer" class="text-center mb-5">
-            <button class="filter-item active" data-filter="all">All Work</button>
-            <button class="filter-item" data-filter="env">Environmental (E)</button>
-            <button class="filter-item" data-filter="soc">Social (S)</button>
-            <button class="filter-item" data-filter="gov">Governance (G)</button>
+        <div class="col-lg-6 mt-5 mt-lg-0 ps-lg-5" data-aos="fade-left">
+          <span class="sub-title">Technical Proficiency</span>
+          <h2 class="fw-bold mb-4">Bridging Code & <span class="text-highlight">Compliance</span></h2>
+          <p class="text-muted">
+            I specialize in the technical side of sustainability. While others talk policy, I build the data
+            infrastructure that proves it.
+          </p>
+          <p class="text-muted">
+            From building <strong>data pipelines</strong> for audit-ready metrics to training <strong>Predictive
+              Models</strong> for net-zero pathways, I ensure your data is accurate, traceable, and impactful.
+          </p>
+          <a href="Saheed_Damilola_A._ESG_Analyst.pdf" download class="c-btn glow-on-hover mt-3 d-inline-block">
+            <i class="bi bi-download me-2"></i>Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio section-padding" id="portfolio">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="sub-title">Featured Work</span>
+        <h2 class="fw-bold">Impact <span class="text-highlight">Portfolio</span></h2>
+      </div>
+
+      <div id="myBtnContainer" class="text-center mb-5">
+        <button class="filter-item active" data-filter="all">All Work</button>
+        <button class="filter-item" data-filter="env">Environmental (E)</button>
+        <button class="filter-item" data-filter="soc">Social (S)</button>
+        <button class="filter-item" data-filter="gov">Governance (G)</button>
+      </div>
+
+      <div class="row g-4 portfolio-container">
+        <div class="col-lg-4 col-md-6 post env all" data-aos="zoom-in">
+          <div class="project-card glass-card">
+            <div class="card-img-wrapper">
+              <img src="images/lagos_solar.PNG" class="card-img-top" alt="Solar Project">
+              <div class="overlay">
+                <a href="https://adewoye-saheed-dml.medium.com/lagos-state-rooftop-solar-potential-mapping-c8245c3a164d"
+                  target="_blank"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <div class="card-body p-4">
+              <div class="tags mb-2">
+                <span class="badge bg-success-soft">Scope 2</span>
+                <span class="badge bg-primary-soft">PowerBI</span>
+              </div>
+              <h5 class="fw-bold">Lagos Solar Mapping</h5>
+              <p class="text-small text-muted">Analyzing rooftop solar potential to reduce dependency on fossil fuel
+                generators.</p>
+            </div>
+          </div>
         </div>
 
         <div class="row g-4 portfolio-container">
+          <div class="col-lg-4 col-md-6 post env all" data-aos="zoom-in">
+            <div class="project-card glass-card">
+              <div class="card-img-wrapper">
+                <img src="images/lagos_solar.PNG" class="card-img-top" alt="Gridwatch Project">
+                <div class="overlay">
+                  <a href="https://adewoye-saheed-dml.medium.com/lagos-state-rooftop-solar-potential-mapping-c8245c3a164d"
+                    target="_blank"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+              <div class="card-body p-4">
+                <div class="tags mb-2">
+                  <span class="badge bg-success bg-opacity-10 text-success">Scope 2</span>
+                  <span class="badge bg-warning bg-opacity-10 text-warning">dbt</span>
+                  <span class="badge bg-primary bg-opacity-10 text-primary">ELT</span>
+                </div>
+                <h5 class="fw-bold">GridWatch</h5>
+                <p class="text-small text-muted">GridWatch is an end-to-end analytics engineering platform designed to
+                  optimize energy consumption for heavy industry operations.</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row g-4 portfolio-container">
             <div class="col-lg-4 col-md-6 post env all" data-aos="zoom-in">
-                <div class="project-card glass-card">
-                    <div class="card-img-wrapper">
-                        <img src="images/lagos_solar.PNG" class="card-img-top" alt="Solar Project">
-                        <div class="overlay">
-                            <a href="https://adewoye-saheed-dml.medium.com/lagos-state-rooftop-solar-potential-mapping-c8245c3a164d" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                        </div>
-                    </div>
-                    <div class="card-body p-4">
-                        <div class="tags mb-2">
-                            <span class="badge bg-success-soft">Scope 2</span>
-                            <span class="badge bg-primary-soft">PowerBI</span>
-                        </div>
-                        <h5 class="fw-bold">Lagos Solar Mapping</h5>
-                        <p class="text-small text-muted">Analyzing rooftop solar potential to reduce dependency on fossil fuel generators.</p>
-                    </div>
+              <div class="project-card glass-card">
+                <div class="card-img-wrapper">
+                  <img src="images/lagos_solar.PNG" class="card-img-top" alt="VCM Project">
+                  <div class="overlay">
+                    <a href="https://adewoye-saheed-dml.medium.com/lagos-state-rooftop-solar-potential-mapping-c8245c3a164d"
+                      target="_blank"><i class="bi bi-link-45deg"></i></a>
+                  </div>
                 </div>
+                <div class="card-body p-4">
+                  <div class="tags mb-2">
+                    <span class="badge bg-success bg-opacity-10 text-success">Scope 2</span>
+                    <span class="badge bg-warning bg-opacity-10 text-warning">Streamlit</span>
+                    <span class="badge bg-primary bg-opacity-10 text-primary">Python</span>
+                  </div>
+                  <h5 class="fw-bold">Carbon Market Analytics</h5>
+                  <p class="text-small text-muted">This project was designed to tackle the challenge of "fragmented registry data" in the Voluntary Carbon Market.</p>
+                </div>
+              </div>
             </div>
+  
 
-            <div class="col-lg-4 col-md-6 post soc all" data-aos="zoom-in">
-                <div class="project-card glass-card">
-                    <div class="card-img-wrapper">
-                        <img src="images/depression.PNG" class="card-img-top" alt="Depression App">
-                         <div class="overlay">
-                            <a href="https://medium.com/@adewoye-saheed-dml/college-students-depression-prediction-model-61f3e046df5f" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                        </div>
-                    </div>
-                    <div class="card-body p-4">
-                        <div class="tags mb-2">
-                            <span class="badge bg-info-soft">Social</span>
-                            <span class="badge bg-primary-soft">Docker</span>
-                        </div>
-                        <h5 class="fw-bold">Mental Health AI</h5>
-                        <p class="text-small text-muted">Predictive modeling for student wellbeing and safety intervention.</p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-lg-4 col-md-6 post reporting all" data-aos="zoom-in">
-                <div class="project-card glass-card">
-                    <div class="card-img-wrapper">
-                        <img src="images/olistt.png" class="card-img-top" alt="Olist">
-                         <div class="overlay">
-                            <a href="https://olistsalesfunnelapp-6jsbfwnfwjyk6x8tfrhfzn.streamlit.app/" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                        </div>
-                    </div>
-                    <div class="card-body p-4">
-                        <div class="tags mb-2">
-                            <span class="badge bg-warning-soft">Pipeline</span>
-                            <span class="badge bg-primary-soft">Streamlit</span>
-                        </div>
-                        <h5 class="fw-bold">Ecommerce Ops</h5>
-                        <p class="text-small text-muted">End-to-end data pipeline and reporting dashboard for sales operations.</p>
-                    </div>
+          <div class="col-lg-4 col-md-6 post soc all" data-aos="zoom-in">
+            <div class="project-card glass-card">
+              <div class="card-img-wrapper">
+                <img src="images/depression.PNG" class="card-img-top" alt="Depression App">
+                <div class="overlay">
+                  <a href="https://medium.com/@adewoye-saheed-dml/college-students-depression-prediction-model-61f3e046df5f"
+                    target="_blank"><i class="bi bi-link-45deg"></i></a>
                 </div>
+              </div>
+              <div class="card-body p-4">
+                <div class="tags mb-2">
+                  <span class="badge bg-info-soft">Social</span>
+                  <span class="badge bg-primary-soft">Docker</span>
+                </div>
+                <h5 class="fw-bold">Mental Health AI</h5>
+                <p class="text-small text-muted">Predictive modeling for student wellbeing and safety intervention.</p>
+              </div>
             </div>
+          </div>
 
-             <div class="col-lg-4 col-md-6 post soc all" data-aos="zoom-in">
-                <div class="project-card glass-card">
-                    <div class="card-img-wrapper">
-                        <img src="images/Copy of Modern Top 10 Shocking Moments Youtube Thumbnail.png" class="card-img-top" alt="YT">
-                         <div class="overlay">
-                            <a href="https://adewoye-saheed-dml.medium.com/alex-the-analyst-youtube-channel-insights-e349b6d16269" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                        </div>
-                    </div>
-                    <div class="card-body p-4">
-                        <div class="tags mb-2">
-                            <span class="badge bg-info-soft">Community</span>
-                            <span class="badge bg-primary-soft">API</span>
-                        </div>
-                        <h5 class="fw-bold">Community Engagement</h5>
-                        <p class="text-small text-muted">Analyzing stakeholder engagement via YouTube Data API.</p>
-                    </div>
+          <div class="col-lg-4 col-md-6 post reporting all" data-aos="zoom-in">
+            <div class="project-card glass-card">
+              <div class="card-img-wrapper">
+                <img src="images/olistt.png" class="card-img-top" alt="Olist">
+                <div class="overlay">
+                  <a href="https://olistsalesfunnelapp-6jsbfwnfwjyk6x8tfrhfzn.streamlit.app/" target="_blank"><i
+                      class="bi bi-link-45deg"></i></a>
                 </div>
+              </div>
+              <div class="card-body p-4">
+                <div class="tags mb-2">
+                  <span class="badge bg-warning-soft">Pipeline</span>
+                  <span class="badge bg-primary-soft">Streamlit</span>
+                </div>
+                <h5 class="fw-bold">Ecommerce Ops</h5>
+                <p class="text-small text-muted">End-to-end data pipeline and reporting dashboard for sales operations.
+                </p>
+              </div>
             </div>
+          </div>
 
-            <div class="col-lg-4 col-md-6 post soc all" data-aos="zoom-in">
-                <div class="project-card glass-card">
-                    <div class="card-img-wrapper">
-                        <img src="images/hng.PNG" class="card-img-top" alt="HNG">
-                         <div class="overlay">
-                            <a href="https://adewoye-saheed-dml.medium.com/seo-market-analysis-ai-for-homework-keywords-analysis-910c8b68e486" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                        </div>
-                    </div>
-                    <div class="card-body p-4">
-                        <div class="tags mb-2">
-                            <span class="badge bg-info-soft">Education</span>
-                            <span class="badge bg-primary-soft">NLP</span>
-                        </div>
-                        <h5 class="fw-bold">EdTech Keywords</h5>
-                        <p class="text-small text-muted">Market analysis for educational accessibility tools.</p>
-                    </div>
+          <div class="col-lg-4 col-md-6 post soc all" data-aos="zoom-in">
+            <div class="project-card glass-card">
+              <div class="card-img-wrapper">
+                <img src="images/Copy of Modern Top 10 Shocking Moments Youtube Thumbnail.png" class="card-img-top"
+                  alt="YT">
+                <div class="overlay">
+                  <a href="https://adewoye-saheed-dml.medium.com/alex-the-analyst-youtube-channel-insights-e349b6d16269"
+                    target="_blank"><i class="bi bi-link-45deg"></i></a>
                 </div>
+              </div>
+              <div class="card-body p-4">
+                <div class="tags mb-2">
+                  <span class="badge bg-info-soft">Community</span>
+                  <span class="badge bg-primary-soft">API</span>
+                </div>
+                <h5 class="fw-bold">Community Engagement</h5>
+                <p class="text-small text-muted">Analyzing stakeholder engagement via YouTube Data API.</p>
+              </div>
             </div>
+          </div>
 
-            <div class="col-lg-4 col-md-6 post reporting all" data-aos="zoom-in">
-                <div class="project-card glass-card">
-                    <div class="card-img-wrapper">
-                        <img src="images/motto.png" class="card-img-top" alt="DB">
-                         <div class="overlay">
-                            <a href="https://adewoye-saheed-dml.medium.com/dimension-modelling-and-analysis-latino-car-garage-4a815a2b18e6" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                        </div>
-                    </div>
-                    <div class="card-body p-4">
-                        <div class="tags mb-2">
-                            <span class="badge bg-secondary-soft">Warehousing</span>
-                            <span class="badge bg-primary-soft">MySQL</span>
-                        </div>
-                        <h5 class="fw-bold">Data Modeling</h5>
-                        <p class="text-small text-muted">Dimensional modeling for robust reporting architectures.</p>
-                    </div>
+          <div class="col-lg-4 col-md-6 post soc all" data-aos="zoom-in">
+            <div class="project-card glass-card">
+              <div class="card-img-wrapper">
+                <img src="images/hng.PNG" class="card-img-top" alt="HNG">
+                <div class="overlay">
+                  <a href="https://adewoye-saheed-dml.medium.com/seo-market-analysis-ai-for-homework-keywords-analysis-910c8b68e486"
+                    target="_blank"><i class="bi bi-link-45deg"></i></a>
                 </div>
+              </div>
+              <div class="card-body p-4">
+                <div class="tags mb-2">
+                  <span class="badge bg-info-soft">Education</span>
+                  <span class="badge bg-primary-soft">NLP</span>
+                </div>
+                <h5 class="fw-bold">EdTech Keywords</h5>
+                <p class="text-small text-muted">Market analysis for educational accessibility tools.</p>
+              </div>
             </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 post reporting all" data-aos="zoom-in">
+            <div class="project-card glass-card">
+              <div class="card-img-wrapper">
+                <img src="images/motto.png" class="card-img-top" alt="DB">
+                <div class="overlay">
+                  <a href="https://adewoye-saheed-dml.medium.com/dimension-modelling-and-analysis-latino-car-garage-4a815a2b18e6"
+                    target="_blank"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+              <div class="card-body p-4">
+                <div class="tags mb-2">
+                  <span class="badge bg-secondary-soft">Warehousing</span>
+                  <span class="badge bg-primary-soft">MySQL</span>
+                </div>
+                <h5 class="fw-bold">Data Modeling</h5>
+                <p class="text-small text-muted">Dimensional modeling for robust reporting architectures.</p>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
-    </section>
+  </section>
 
-    <section class="contact section-padding" id="contact">
-      <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="glass-card p-5 text-center" data-aos="fade-up">
-                    <h2 class="fw-bold mb-3">Ready to transform your data?</h2>
-                    <p class="text-muted mb-4">I'm currently available for freelance projects and full-time roles in ESG Analytics.</p>
-                    
-                    <div class="d-flex justify-content-center gap-4 mb-4 social-icons">
-                        <a href="https://www.linkedin.com/in/adewoye-saheed-dml/" target="_blank"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://github.com/adewoye-saheed-dML/" target="_blank"><i class="bi bi-github"></i></a>
-                        <a href="mailto:adewoyesaheed.dml@gmail.com"><i class="bi bi-envelope-at-fill"></i></a>
-                    </div>
+  <section class="contact section-padding" id="contact">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="glass-card p-5 text-center" data-aos="fade-up">
+            <h2 class="fw-bold mb-3">Ready to transform your data?</h2>
+            <p class="text-muted mb-4">I'm currently available for freelance projects and full-time roles in ESG
+              Analytics.</p>
 
-                    <form action="https://formspree.io/f/xwplavlw" method="POST" class="text-start">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <input type="text" name="name" class="form-control glass-input" placeholder="Your Name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" name="email" class="form-control glass-input" placeholder="Your Email" required>
-                            </div>
-                            <div class="col-12">
-                                <textarea name="message" class="form-control glass-input" rows="4" placeholder="How can I help you?" required></textarea>
-                            </div>
-                            <div class="col-12 text-center">
-                                <button type="submit" class="c-btn glow-on-hover px-5 py-3">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+            <div class="d-flex justify-content-center gap-4 mb-4 social-icons">
+              <a href="https://www.linkedin.com/in/adewoye-saheed-dml/" target="_blank"><i
+                  class="bi bi-linkedin"></i></a>
+              <a href="https://github.com/adewoye-saheed-dML/" target="_blank"><i class="bi bi-github"></i></a>
+              <a href="mailto:adewoyesaheed.dml@gmail.com"><i class="bi bi-envelope-at-fill"></i></a>
             </div>
+
+            <form action="https://formspree.io/f/xwplavlw" method="POST" class="text-start">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control glass-input" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" name="email" class="form-control glass-input" placeholder="Your Email" required>
+                </div>
+                <div class="col-12">
+                  <textarea name="message" class="form-control glass-input" rows="4" placeholder="How can I help you?"
+                    required></textarea>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="c-btn glow-on-hover px-5 py-3">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer class="text-center py-4 text-muted">
-        <small>&copy; 2026 Saheed Damilola Adewoye| Built with <i class="bi bi-heart-fill text-success"></i> & Data.</small>
-    </footer>
+  <footer class="text-center py-4 text-muted">
+    <small>&copy; 2026 Saheed Damilola Adewoye| Built with <i class="bi bi-heart-fill text-success"></i> & Data.</small>
+  </footer>
 
-    <button type="button" class="btn btn-floating" id="btn-back-to-top">
-        <i class="bi bi-arrow-up"></i>
-    </button>
+  <button type="button" class="btn btn-floating" id="btn-back-to-top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({ duration: 1000, offset: 50, once: true });
-    </script>
-    
-    <script src="script.js"></script>
-  </body>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, offset: 50, once: true });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+
 </html>

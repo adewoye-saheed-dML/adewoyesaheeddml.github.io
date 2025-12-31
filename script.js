@@ -18,10 +18,10 @@
     if (document.querySelector('.auto-type')) {
         new Typed('.auto-type', {
             strings: [
-                "ESG Data Specialist", 
-                "Sustainability Analyst", 
-                "Carbon Accounting Lead",
-                "Data Engineer"
+                "Climate & Carbon Data Product Builder",
+                "Climate Data Analyst",
+                "Carbon Analytics Engineer",
+                "Data Engine"
             ],
             typeSpeed: 100,
             backSpeed: 50,

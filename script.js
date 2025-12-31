@@ -21,7 +21,7 @@
                 "Climate & Carbon Data Product Builder",
                 "Climate Data Analyst",
                 "Carbon Analytics Engineer",
-                "Data Engine"
+                "Data Engineer"
             ],
             typeSpeed: 100,
             backSpeed: 50,
